@@ -20,7 +20,7 @@
     },
     "scope": {
         "contoso-sandbox": [
-            "//providers/Microsoft.Management/managementGroups/Sandbox"
+            "/providers/Microsoft.Management/managementGroups/Sandbox"
         ],
         "contoso-prod": [
             "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
