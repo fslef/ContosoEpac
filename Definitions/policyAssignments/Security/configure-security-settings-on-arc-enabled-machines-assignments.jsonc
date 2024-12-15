@@ -1,0 +1,25 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/arc-security/",
+    "assignment": {
+        "name": "security-settings-on-arc",
+        "displayName": "Configure Security Settings on Arc-enabled Machines",
+        "description": "Configure security settings on Azure Arc-enabled machines, including installing Azure Monitor Agent, configuring Change Tracking & Inventory VM extension and DCR, and DCR for SOC."
+    },
+    "definitionEntry": {
+        "policySetName": "configure-security-settings-on-arc-enabled-machines",
+        "displayName": "Configure Security Settings on Arc-enabled Machines"
+    },
+    "parameters": {
+        "CTI-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/Contoso-CT-DCR",
+        "SOC-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/SOC-DCR"
+    },
+    "scope": {
+        "contoso-sandbox": [
+            "/providers/Microsoft.Management/managementGroups/Sandbox"
+        ],
+        "contoso-prod": [
+            "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+        ]
+    }
+}
