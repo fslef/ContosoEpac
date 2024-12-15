@@ -24,7 +24,7 @@ jobs:
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: TENANT-PLAN
+      planGitHubEnvironment: EPAC-PROD-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
@@ -36,7 +36,7 @@ jobs:
     uses: ./.github/workflows/deploy-policy.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: TENANT-DEPLOY-POLICY
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
@@ -48,7 +48,7 @@ jobs:
     uses: ./.github/workflows/deploy-roles.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: TENANT-DEPLOY-ROLES
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
