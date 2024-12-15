@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/arc-security/",
     "assignment": {
-        "name": "configure-security-settings-on-arc-enabled-machines",
+        "name": "security-settings-on-arc",
         "displayName": "Configure Security Settings on Arc-enabled Machines",
         "description": "Configure security settings on Azure Arc-enabled machines, including installing Azure Monitor Agent, configuring Change Tracking & Inventory VM extension and DCR, and DCR for SOC."
     },
