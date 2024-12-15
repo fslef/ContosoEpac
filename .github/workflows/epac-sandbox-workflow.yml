@@ -54,7 +54,7 @@ jobs:
     secrets: inherit
 
   tenantPlan:
-    name: Plan tenant
+    name: Plan prod
     needs: [deployPolicy, deployRoles]
     if: |
       always()

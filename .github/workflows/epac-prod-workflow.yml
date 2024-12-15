@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC Tenant Workflow
+name: EPAC Prod Workflow
 
 on:
   pull_request:
@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   plan:
-    name: Plan tenant
+    name: Plan prod
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: contoso-prod
@@ -30,7 +30,7 @@ jobs:
     secrets: inherit
 
   deployPolicy:
-    name: Deploy tenant Policy Changes
+    name: Deploy prod Policy Changes
     needs: plan
     if: needs.plan.outputs.deployPolicyChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-policy.yml
@@ -42,7 +42,7 @@ jobs:
     secrets: inherit
 
   deployRoles:
-    name: Deploy tenant Role Changes
+    name: Deploy prod Role Changes
     needs: plan
     if: needs.plan.outputs.deployRoleChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-roles.yml

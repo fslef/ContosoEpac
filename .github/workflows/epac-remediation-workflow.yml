@@ -19,19 +19,19 @@ permissions:
 
 jobs:
   epacDev:
-    name: 'Remediate epac-dev environment'
+    name: 'Remediate epac-sandbox environment'
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-sandbox
-      planGitHubEnvironment: EPAC-DEV
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
 
   tenant:
-    name: 'Remediate tenant environment'
+    name: 'Remediate prod environment'
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: TENANT-REMEDIATE-POLICY
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_DEFINITIONS_FOLDER: ./Definitions
     secrets: inherit
