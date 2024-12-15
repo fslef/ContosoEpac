@@ -18,30 +18,47 @@
       },
       "SOC-DCR": {
         "metadata": {
-          "displayName": "SOC DCR ressource ID"
+          "displayName": "SOC DCR ressource ID",
+          "portalReview": true
         },
         "type": "string"
       }
     },
     "policyDefinitions": [
       {
-        "policyDefinitionReferenceId": "Configure ChangeTracking Extension for Linux Arc machines",
+        "policyDefinitionReferenceId": "configure-windows-arc-azure-monitor-agent",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4",
+        "parameters": {},
+        "groupNames": [
+          "AzureMonitorAgent"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "configure-linux-arc-azure-monitor-agent",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
+        "parameters": {},
+        "groupNames": [
+          "AzureMonitorAgent"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "configure-change-tracking-extension-for-linux-arc",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/10caed8a-652c-4d1d-84e4-2805b7c07278",
         "parameters": {},
         "groupNames": [
-          "LinuxArc"
+          "ChangeTracking"
         ]
       },
       {
-        "policyDefinitionReferenceId": "Configure ChangeTracking Extension for Windows Arc machines",
+        "policyDefinitionReferenceId": "configure-change-tracking-extension-for-windows-arc",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4bb303db-d051-4099-95d2-e3e1428a4cd5",
         "parameters": {},
         "groupNames": [
-          "WindowsArc"
+          "ChangeTracking"
         ]
       },
       {
-        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to be associated with a Data Collection Rule for ChangeTracking",
+        "policyDefinitionReferenceId": "windows-arc-machines-to-be-associated-with-cti-dcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ef9fe2ce-a588-4edd-829c-6247069dcfdb",
         "parameters": {
           "dcrResourceId": {
@@ -49,55 +66,11 @@
           }
         },
         "groupNames": [
-          "WindowsArc"
+          "AssociateDCRforChangeTracking"
         ]
       },
       {
-        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to install AMA for ChangeTracking and Inventory",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a7acfae7-9497-4a3f-a3b5-a16a50abbe2f",
-        "parameters": {},
-        "groupNames": [
-          "WindowsArc"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to be associated with a Data Collection Rule for ChangeTracking",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5192",
-        "parameters": {
-          "dcrResourceId": {
-            "value": "[parameters('CTI-DCR')]"
-          }
-        },
-        "groupNames": [
-          "LinuxArc"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to to install AMA for ChangeTracking and Inventory",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5187",
-        "parameters": {},
-        "groupNames": [
-          "LinuxArc"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to run Azure Monitor Agent",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4",
-        "parameters": {},
-        "groupNames": [
-          "WindowsArc"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to run Azure Monitor Agent",
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
-        "parameters": {},
-        "groupNames": [
-          "LinuxArc"
-        ]
-      },
-      {
-        "policyDefinitionReferenceId": "Configure Windows Machines to be associated with a Data Collection Rule or a Data Collection Endpoin",
+        "policyDefinitionReferenceId": "windows-arc-machines-to-be-associated-with-soc-dcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/eab1f514-22e3-42e3-9a1f-e1dc9199355c",
         "parameters": {
           "dcrResourceId": {
@@ -105,11 +78,23 @@
           }
         },
         "groupNames": [
-          "WindowsArc"
+          "AssociateDCRforSOC"
         ]
       },
       {
-        "policyDefinitionReferenceId": "Configure Linux Machines to be associated with a Data Collection Rule or a Data Collection Endpoint",
+        "policyDefinitionReferenceId": "linux-arc-machines-to-be-associated-with-cti-dcr",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5192",
+        "parameters": {
+          "dcrResourceId": {
+            "value": "[parameters('CTI-DCR')]"
+          }
+        },
+        "groupNames": [
+          "AssociateDCRforChangeTracking"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "linux-arc-machines-to-be-associated-with-soc-dcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2ea82cdd-f2e8-4500-af75-67a2e084ca74",
         "parameters": {
           "dcrResourceId": {
@@ -117,20 +102,30 @@
           }
         },
         "groupNames": [
-          "LinuxArc"
+          "AssociateDCRforSOC"
         ]
       }
     ],
     "policyDefinitionGroups": [
       {
-        "displayName": "Windows Arc Enabled Servers",
+        "displayName": "Deploy Azure Monitor Agent",
         "category": "Monitoring",
-        "name": "WindowsArc"
+        "name": "AzureMonitorAgent"
       },
       {
-        "displayName": "Linux Arc Enabled Servers",
+        "displayName": "Deploy Change Tracking Extension",
         "category": "Monitoring",
-        "name": "LinuxArc"
+        "name": "ChangeTracking"
+      },
+      {
+        "displayName": "Associate DCR for Change Tracking",
+        "category": "Monitoring",
+        "name": "AssociateDCRforChangeTracking"
+      },
+      {
+        "displayName": "Associate DCR for SOC",
+        "category": "Monitoring",
+        "name": "AssociateDCRforSOC"
       }
     ]
   }
