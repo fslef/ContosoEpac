@@ -3,10 +3,10 @@
   "name": "configure-security-settings-on-arc-enabled-machines",
   "properties": {
     "displayName": "Configure Security Settings on Arc-enabled Machines",
-    "description": "",
+    "description": "Configure security settings on Azure Arc-enabled machines, including installing Azure Monitor Agent, configuring Change Tracking & Inventory VM extension and DCR, and DCR for SOC.",
     "metadata": {
       "category": "Security",
-      "version": "0.3.0"
+      "version": "0.3.1"
     },
     "parameters": {
       "CTI-DCR": {
