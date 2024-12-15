@@ -1,0 +1,150 @@
+2024-12-14_03:23:14 -- Log File Created
+2024-12-14_03:23:14 -- Beginning Test Path test for Definitions: Confirming that the path ./Definitions exists.
+2024-12-14_03:23:14 -- Test Result Data: Path test for Definitions -- EvaluationReturn: True
+2024-12-14_03:23:14 -- Path test for Definitions: Passed ./Definitions exists
+2024-12-14_03:23:14 -- Beginning Test Path test for Logs: Confirming that the path ./Output/Logs exists.
+2024-12-14_03:23:14 -- Test Result Data: Path test for Logs -- EvaluationReturn: True
+2024-12-14_03:23:14 -- Path test for Logs: Passed ./Output/Logs exists
+2024-12-14_03:23:14 -- Beginning Test Path test for Output: Confirming that the path ./Output exists.
+2024-12-14_03:23:14 -- Test Result Data: Path test for Output -- EvaluationReturn: True
+2024-12-14_03:23:14 -- Path test for Output: Passed ./Output exists
+2024-12-14_03:23:14 -- Beginning Test Path test for AnswerFile.json: Confirming that the path ./Output/HydrationAnswer/AnswerFile.json exists.
+2024-12-14_03:23:14 -- Test Result Data: Path test for AnswerFile.json -- EvaluationReturn: True
+2024-12-14_03:23:14 -- Path test for AnswerFile.json: Passed ./Output/HydrationAnswer/AnswerFile.json exists
+2024-12-14_03:23:14 -- Summary of 
+2024-12-14_03:23:14 -- Test Result Data: ./Definitions -- Passed
+2024-12-14_03:23:24 -- Test Result Data: ./Output/Logs -- Passed
+2024-12-14_03:23:34 -- Test Result Data: ./Output -- Passed
+2024-12-14_03:23:44 -- Test Result Data: ./Output/HydrationAnswer/AnswerFile.json -- Passed
+2024-12-14_03:23:54 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging 13.107.42.14
+2024-12-14_03:23:56 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:23:56 -- Internet Connectivity Validation Test: Passed 13.107.42.14 ping test successful
+2024-12-14_03:23:56 -- Test Result Data: internetConnection -- Passed
+2024-12-14_03:23:56 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging www.github.com
+2024-12-14_03:23:58 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:23:58 -- Internet Connectivity Validation Test: Passed www.github.com ping test successful
+2024-12-14_03:23:58 -- Test Result Data: githubConnection -- Passed
+2024-12-14_03:23:58 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging management.azure.com
+2024-12-14_03:24:00 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:24:00 -- Internet Connectivity Validation Test: Passed management.azure.com ping test successful
+2024-12-14_03:24:00 -- Test Result Data: azureManagement -- Passed
+2024-12-14_03:24:00 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging login.microsoftonline.com
+2024-12-14_03:24:02 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:24:02 -- Internet Connectivity Validation Test: Passed login.microsoftonline.com ping test successful
+2024-12-14_03:24:02 -- Test Result Data: azureAuthentication -- Passed
+2024-12-14_03:24:02 -- Scope: /providers/Microsoft.Management/managementGroups/be4ae739-dea2-4afc-8dc0-9a04e4091840
+2024-12-14_03:24:02 -- Determining account type used for current connection....
+2024-12-14_03:24:29 -- Error - Failed to retrieve the account id from the Connect-AzAccount debug log.
+Confirm active connection, and if this is confirmed then run with the -debug flag for additional logging information.
+2024-12-14_03:24:29 -- Beginning Test Hydration Kit RBAC Access Test: Reviewing RBAC Permissions for .
+2024-12-14_03:24:29 -- ClientId: 
+2024-12-14_03:24:29 -- Gathering RBAC entries at /providers/Microsoft.Management/managementGroups/be4ae739-dea2-4afc-8dc0-9a04e4091840 and reviewing entries for ....
+2024-12-14_03:24:30 -- Test for Role: Contributor -- Failed
+2024-12-14_03:24:30 -- Test for Role: Reader -- Failed
+2024-12-14_03:24:30 -- Test for Role: Owner -- Failed
+2024-12-14_03:24:30 -- Test for Role: RoleBasedAccessControlAdministrator -- Failed
+2024-12-14_03:24:30 -- Test for Role: ResourcePolicyContributor -- Failed
+2024-12-14_03:24:30 -- Test Result Data: Hydration Kit RBAC Access Test: FailedAll -- This security principal has insufficient rights to continue. Confirm a valid authenticated connection to Azure, confirm the tenant in use, and confirm RBAC rights for the account in use.
+2024-12-14_03:24:30 -- Hydration Kit RBAC Access Test: FailedAll This security principal has insufficient rights to continue. Confirm a valid authenticated connection to Azure, confirm the tenant in use, and confirm RBAC rights for the account in use.
+2024-12-14_03:24:30 -- Summary: ./Definitions ------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: ./Output/Logs ------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: ./Output ------------------------------------------------------------------------------------------------------------------------------------------------------ Passed
+2024-12-14_03:24:30 -- Summary: ./Output/HydrationAnswer/AnswerFile.json ---------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: internetConnection -------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: githubConnection ---------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: azureManagement ----------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: azureAuthentication ------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:30 -- Summary: RbacAuthorization ------------------------------------------------------------------------------------------------------------------------------------------ FailedAll
+2024-12-14_03:24:30 -- Summary: gitInstall ---------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:24:47 -- The Tenant Intermediate Root Management Group does not exist, and will need to be created to be used.
+2024-12-14_03:24:47 -- Create Intermediate Root: "/providers/Microsoft.Management/managementGroups/IntermediateContoso" does not exist, adding discussion items...
+2024-12-14_03:24:48 -- Corp Available: Failed to retrieve management group Corp
+2024-12-14_03:24:49 -- Online Available: Failed to retrieve management group Online
+2024-12-14_03:24:49 -- Identity has standard CAF3 parent, Platform
+2024-12-14_03:24:49 -- Management has standard CAF3 parent, Platform
+2024-12-14_03:24:50 -- Connectivity has standard CAF3 parent, Platform
+2024-12-14_03:24:50 -- Decomissioned Available: Failed to retrieve management group Decomissioned
+2024-12-14_03:24:51 -- Standard CAF3 Naming Option Will Fail: Actual Parent "IntermediateContoso" for management group "Sandbox"  does not match expected parent "/providers/Microsoft.Management/managementGroups/IntermediateContoso"...
+2024-12-14_03:24:51 -- Create Intermediate Root: "/providers/Microsoft.Management/managementGroups/IntermediateContoso" does not exist, adding discussion items...
+2024-12-14_03:24:51 -- Data Gathered: {"currentTenantPacSelector":{"pacSelector":"tenant01","intermediateRootGroupName":"/providers/Microsoft.Management/managementGroups/IntermediateContoso","tenantId":"be4ae739-dea2-4afc-8dc0-9a04e4091840","cloud":"AzureCloud","keepDfcSecurityAssignments":false,"caf3Status":"FailedNameCollision","intermediateRootStatus":"Available"},"locationList":"eastus, southcentralus, westus2, westus3, australiaeast, southeastasia, northeurope, swedencentral, uksouth, westeurope, centralus, southafricanorth, centralindia, eastasia, japaneast, koreacentral, newzealandnorth, canadacentral, francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, switzerlandnorth, mexicocentral, uaenorth, brazilsouth, israelcentral, qatarcentral, centralusstage, eastus2stage, northcentralusstage, westusstage, asia, asiapacific, australia, brazil, canada, europe, france, germany, global, india, israel, italy, japan, korea, newzealand, norway, poland, qatar, singapore, southafrica, sweden, switzerland, unitedstates, eastasiastage, eastus2, eastusstg, northcentralus, westus, japanwest, jioindiawest, centraluseuap, eastus2euap, southcentralusstg, westcentralus, southafricawest, australiacentral, australiacentral2, australiasoutheast, jioindiacentral, koreasouth, southindia, westindia, canadaeast, francesouth, germanynorth, norwaywest, switzerlandwest, ukwest, uaecentral, brazilsoutheast"}
+2024-12-14_03:25:01 -- Stage Initiated: Processing QuestionSet: initial
+2024-12-14_03:25:01 -- Response(s) Provided: null
+2024-12-14_03:25:01 -- 
+Differing Tenant ID provided, exiting to use the provided Tenant ID...
+
+2024-12-14_03:30:31 -- Overwriting Answer File at ./Output/HydrationAnswer/AnswerFile.json
+2024-12-14_03:30:41 -- Beginning Test Path test for Definitions: Confirming that the path ./Definitions exists.
+2024-12-14_03:30:41 -- Test Result Data: Path test for Definitions -- EvaluationReturn: True
+2024-12-14_03:30:41 -- Path test for Definitions: Passed ./Definitions exists
+2024-12-14_03:30:41 -- Beginning Test Path test for Logs: Confirming that the path ./Output/Logs exists.
+2024-12-14_03:30:41 -- Test Result Data: Path test for Logs -- EvaluationReturn: True
+2024-12-14_03:30:41 -- Path test for Logs: Passed ./Output/Logs exists
+2024-12-14_03:30:41 -- Beginning Test Path test for Output: Confirming that the path ./Output exists.
+2024-12-14_03:30:41 -- Test Result Data: Path test for Output -- EvaluationReturn: True
+2024-12-14_03:30:41 -- Path test for Output: Passed ./Output exists
+2024-12-14_03:30:41 -- Beginning Test Path test for AnswerFile.json: Confirming that the path ./Output/HydrationAnswer/AnswerFile.json exists.
+2024-12-14_03:30:41 -- Test Result Data: Path test for AnswerFile.json -- EvaluationReturn: True
+2024-12-14_03:30:41 -- Path test for AnswerFile.json: Passed ./Output/HydrationAnswer/AnswerFile.json exists
+2024-12-14_03:30:41 -- Summary of 
+2024-12-14_03:30:41 -- Test Result Data: ./Definitions -- Passed
+2024-12-14_03:30:51 -- Test Result Data: ./Output/Logs -- Passed
+2024-12-14_03:31:01 -- Test Result Data: ./Output -- Passed
+2024-12-14_03:31:11 -- Test Result Data: ./Output/HydrationAnswer/AnswerFile.json -- Passed
+2024-12-14_03:31:21 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging 13.107.42.14
+2024-12-14_03:31:23 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:31:23 -- Internet Connectivity Validation Test: Passed 13.107.42.14 ping test successful
+2024-12-14_03:31:23 -- Test Result Data: internetConnection -- Passed
+2024-12-14_03:31:23 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging www.github.com
+2024-12-14_03:31:25 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:31:25 -- Internet Connectivity Validation Test: Passed www.github.com ping test successful
+2024-12-14_03:31:25 -- Test Result Data: githubConnection -- Passed
+2024-12-14_03:31:25 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging management.azure.com
+2024-12-14_03:31:28 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:31:28 -- Internet Connectivity Validation Test: Passed management.azure.com ping test successful
+2024-12-14_03:31:28 -- Test Result Data: azureManagement -- Passed
+2024-12-14_03:31:28 -- Beginning Test Internet Connectivity Validation Test: This will test connectivity to the internet by pinging login.microsoftonline.com
+2024-12-14_03:31:30 -- Test Result Data: Internet Connectivity Validation Test -- EvaluationReturn: True
+2024-12-14_03:31:30 -- Internet Connectivity Validation Test: Passed login.microsoftonline.com ping test successful
+2024-12-14_03:31:30 -- Test Result Data: azureAuthentication -- Passed
+2024-12-14_03:31:30 -- Scope: /providers/Microsoft.Management/managementGroups/be4ae739-dea2-4afc-8dc0-9a04e4091840
+2024-12-14_03:31:30 -- Determining account type used for current connection....
+2024-12-14_03:31:35 -- Error - Failed to retrieve the account id from the Connect-AzAccount debug log.
+Confirm active connection, and if this is confirmed then run with the -debug flag for additional logging information.
+2024-12-14_03:31:35 -- Beginning Test Hydration Kit RBAC Access Test: Reviewing RBAC Permissions for .
+2024-12-14_03:31:35 -- ClientId: 
+2024-12-14_03:31:35 -- Gathering RBAC entries at /providers/Microsoft.Management/managementGroups/be4ae739-dea2-4afc-8dc0-9a04e4091840 and reviewing entries for ....
+2024-12-14_03:31:35 -- Test for Role: Contributor -- Failed
+2024-12-14_03:31:35 -- Test for Role: Reader -- Failed
+2024-12-14_03:31:36 -- Test for Role: Owner -- Failed
+2024-12-14_03:31:36 -- Test for Role: RoleBasedAccessControlAdministrator -- Failed
+2024-12-14_03:31:36 -- Test for Role: ResourcePolicyContributor -- Failed
+2024-12-14_03:31:36 -- Test Result Data: Hydration Kit RBAC Access Test: FailedAll -- This security principal has insufficient rights to continue. Confirm a valid authenticated connection to Azure, confirm the tenant in use, and confirm RBAC rights for the account in use.
+2024-12-14_03:31:36 -- Hydration Kit RBAC Access Test: FailedAll This security principal has insufficient rights to continue. Confirm a valid authenticated connection to Azure, confirm the tenant in use, and confirm RBAC rights for the account in use.
+2024-12-14_03:31:36 -- Summary: ./Definitions ------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: ./Output/Logs ------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: ./Output ------------------------------------------------------------------------------------------------------------------------------------------------------ Passed
+2024-12-14_03:31:36 -- Summary: ./Output/HydrationAnswer/AnswerFile.json ---------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: internetConnection -------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: githubConnection ---------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: azureManagement ----------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: azureAuthentication ------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:36 -- Summary: RbacAuthorization ------------------------------------------------------------------------------------------------------------------------------------------ FailedAll
+2024-12-14_03:31:36 -- Summary: gitInstall ---------------------------------------------------------------------------------------------------------------------------------------------------- Passed
+2024-12-14_03:31:52 -- The TenantIntermediateRoot Management Group "IntermediateContoso"  is confirmed.
+2024-12-14_03:31:52 -- Create Intermediate Root Test: "IntermediateContoso" exists , no deployment is needed...
+2024-12-14_03:31:54 -- Corp Available: Failed to retrieve management group Corp
+2024-12-14_03:31:54 -- Online Available: Failed to retrieve management group Online
+2024-12-14_03:31:55 -- Identity has standard CAF3 parent, Platform
+2024-12-14_03:31:55 -- Management has standard CAF3 parent, Platform
+2024-12-14_03:31:56 -- Connectivity has standard CAF3 parent, Platform
+2024-12-14_03:31:57 -- Decomissioned Available: Failed to retrieve management group Decomissioned
+2024-12-14_03:31:57 -- Sandbox has standard CAF3 parent, IntermediateContoso
+2024-12-14_03:31:58 -- Platform has standard CAF3 parent, IntermediateContoso
+2024-12-14_03:31:59 -- LandingZones has standard CAF3 parent, IntermediateContoso
+2024-12-14_03:31:59 -- Create Intermediate Root Test: "IntermediateContoso" exists , no deployment is needed...
+2024-12-14_03:31:59 -- Data Gathered: {"currentTenantPacSelector":{"pacSelector":"tenant01","intermediateRootGroupName":"IntermediateContoso","tenantId":"be4ae739-dea2-4afc-8dc0-9a04e4091840","cloud":"AzureCloud","keepDfcSecurityAssignments":false,"caf3Status":"PassedRunCaf3","intermediateRootStatus":"Passed"},"locationList":"eastus, southcentralus, westus2, westus3, australiaeast, southeastasia, northeurope, swedencentral, uksouth, westeurope, centralus, southafricanorth, centralindia, eastasia, japaneast, koreacentral, newzealandnorth, canadacentral, francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, switzerlandnorth, mexicocentral, uaenorth, brazilsouth, israelcentral, qatarcentral, centralusstage, eastus2stage, northcentralusstage, westusstage, asia, asiapacific, australia, brazil, canada, europe, france, germany, global, india, israel, italy, japan, korea, newzealand, norway, poland, qatar, singapore, southafrica, sweden, switzerland, unitedstates, eastasiastage, eastus2, eastusstg, northcentralus, westus, japanwest, jioindiawest, centraluseuap, eastus2euap, southcentralusstg, westcentralus, southafricawest, australiacentral, australiacentral2, australiasoutheast, jioindiacentral, koreasouth, southindia, westindia, canadaeast, francesouth, germanynorth, norwaywest, switzerlandwest, ukwest, uaecentral, brazilsoutheast"}
+2024-12-14_03:32:09 -- Stage Initiated: Processing QuestionSet: initial
+2024-12-14_03:32:09 -- Response(s) Provided: null
+2024-12-14_03:32:09 -- 
+Differing Tenant ID provided, exiting to use the provided Tenant ID...
+
