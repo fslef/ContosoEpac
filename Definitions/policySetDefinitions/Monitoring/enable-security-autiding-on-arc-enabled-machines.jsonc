@@ -1,0 +1,137 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-set-definition-schema.json",
+  "name": "enable-security-autiding-on-arc-enabled-machines",
+  "properties": {
+    "displayName": "Enable Security Autiding on Arc-enabled machines",
+    "description": "",
+    "metadata": {
+      "category": "Monitoring",
+      "version": "0.1.0"
+    },
+    "parameters": {
+      "CTI-DCR": {
+        "metadata": {
+          "displayName": "Change Tracking & Inventory DCR ressource ID",
+          "portalReview": true
+        },
+        "type": "string"
+      },
+      "SOC-DCR": {
+        "metadata": {
+          "displayName": "SOC DCR ressource ID"
+        },
+        "type": "string"
+      }
+    },
+    "policyDefinitions": [
+      {
+        "policyDefinitionReferenceId": "Configure ChangeTracking Extension for Linux Arc machines",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/10caed8a-652c-4d1d-84e4-2805b7c07278",
+        "parameters": {},
+        "groupNames": [
+          "LinuxArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure ChangeTracking Extension for Windows Arc machines",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4bb303db-d051-4099-95d2-e3e1428a4cd5",
+        "parameters": {},
+        "groupNames": [
+          "WindowsArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to be associated with a Data Collection Rule for ChangeTracking",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ef9fe2ce-a588-4edd-829c-6247069dcfdb",
+        "parameters": {
+          "dcrResourceId": {
+            "value": "[parameters('CTI-DCR')]"
+          }
+        },
+        "groupNames": [
+          "WindowsArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to install AMA for ChangeTracking and Inventory",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a7acfae7-9497-4a3f-a3b5-a16a50abbe2f",
+        "parameters": {},
+        "groupNames": [
+          "WindowsArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to be associated with a Data Collection Rule for ChangeTracking",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5192",
+        "parameters": {
+          "dcrResourceId": {
+            "value": "[parameters('CTI-DCR')]"
+          }
+        },
+        "groupNames": [
+          "LinuxArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to to install AMA for ChangeTracking and Inventory",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5187",
+        "parameters": {},
+        "groupNames": [
+          "LinuxArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Windows Arc-enabled machines to run Azure Monitor Agent",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4",
+        "parameters": {},
+        "groupNames": [
+          "WindowsArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Linux Arc-enabled machines to run Azure Monitor Agent",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
+        "parameters": {},
+        "groupNames": [
+          "LinuxArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Windows Machines to be associated with a Data Collection Rule or a Data Collection Endpoin",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/eab1f514-22e3-42e3-9a1f-e1dc9199355c",
+        "parameters": {
+          "dcrResourceId": {
+            "value": "[parameters('SOC-DCR')]"
+          }
+        },
+        "groupNames": [
+          "WindowsArc"
+        ]
+      },
+      {
+        "policyDefinitionReferenceId": "Configure Linux Machines to be associated with a Data Collection Rule or a Data Collection Endpoint",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2ea82cdd-f2e8-4500-af75-67a2e084ca74",
+        "parameters": {
+          "dcrResourceId": {
+            "value": "[parameters('SOC-DCR')]"
+          }
+        },
+        "groupNames": [
+          "LinuxArc"
+        ]
+      }
+    ],
+    "policyDefinitionGroups": [
+      {
+        "displayName": "Windows Arc Enabled Servers",
+        "category": "Monitoring",
+        "name": "WindowsArc"
+      },
+      {
+        "displayName": "Linux Arc Enabled Servers",
+        "category": "Monitoring",
+        "name": "LinuxArc"
+      }
+    ]
+  }
+}
