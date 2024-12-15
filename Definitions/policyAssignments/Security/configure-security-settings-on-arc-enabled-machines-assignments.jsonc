@@ -11,12 +11,8 @@
         "displayName": "Configure Security Settings on Arc-enabled Machines"
     },
     "parameters": {
-        "CTI-DCR": {
-            "value": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/Contoso-CT-DCR"
-        },
-        "SOC-DCR": {
-            "value": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/SOC-DCR"
-        }
+        "CTI-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/Contoso-CT-DCR",
+        "SOC-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/SOC-DCR"
     },
     "scope": {
         "contoso-sandbox": [
