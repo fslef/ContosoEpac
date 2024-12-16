@@ -13,34 +13,42 @@
             {
                 "message": "Azure Monitor Agent is required by security policies.",
                 // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
-                "policyDefinitionReferenceId":[
-                    "ConfigureWindowsArcAzureMonitorAgent",
-                    "ConfigureLinuxArcAzureMonitorAgent"
-                ]
+                "policyDefinitionReferenceId": "ConfigureWindowsArcAzureMonitorAgent"
+            },
+            {
+                "message": "Azure Monitor Agent is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId": "ConfigureLinuxArcAzureMonitorAgent"
             },
             {
                 "message": "Change Tracking & Inventory is required by security policies.",
                 // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
-                "policyDefinitionReferenceId":[
-                    "ConfigureChangeTrackingExtensionForLinuxArc",
-                    "ConfigureChangeTrackingExtensionForWindowsArc"
-                ]
+                "policyDefinitionReferenceId": "ConfigureChangeTrackingExtensionForWindowsArc"
+            },
+            {
+                "message": "Change Tracking & Inventory is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId": "ConfigureChangeTrackingExtensionForLinuxArc"
             },
             {
                 "message": "Data Collection Rules for SOC is required by security policies.",
                 // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
-                "policyDefinitionReferenceId":[
-                    "LinuxArcMachinesToBeAssociatedWithSocDcr",
-                    "WindowsArcMachinesToBeAssociatedWithSocDcr"
-                ]
+                "policyDefinitionReferenceId": "WindowsArcMachinesToBeAssociatedWithSocDcr"
+            },
+            {
+                "message": "Data Collection Rules for SOC is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId": "LinuxArcMachinesToBeAssociatedWithSocDcr"
             },
             {
                 "message": "Data Collection Rules for Change Tracking & Inventory is required by security policies.",
                 // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
-                "policyDefinitionReferenceId":[
-                    "LinuxArcMachinesToBeAssociatedWithCtiDcr",
-                    "WindowsArcMachinesToBeAssociatedWithCtiDcr"
-                ]
+                "policyDefinitionReferenceId": "WindowsArcMachinesToBeAssociatedWithCtiDcr"
+            },
+            {
+                "message": "Data Collection Rules for Change Tracking & Inventory is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId": "LinuxArcMachinesToBeAssociatedWithCtiDcr"
             }
         ]
     },
