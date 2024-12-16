@@ -64,7 +64,6 @@
                 "displayName": "Sandbox ",
                 "description": "Sandbox Arc-connected machines controls enforcement with "
             },
-            "parameterSelector": "sandbox",
             "scope": {
                 "contoso-sandbox": [
                     "/providers/Microsoft.Management/managementGroups/sandbox"
@@ -78,7 +77,6 @@
                 "displayName": "Prod ",
                 "description": "Prod Arc-connected machines controls enforcement with "
             },
-            "parameterSelector": "prod",
             "scope": {
                 "contoso-prod": [
                     "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
