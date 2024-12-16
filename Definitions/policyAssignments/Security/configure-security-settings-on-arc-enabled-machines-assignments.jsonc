@@ -83,7 +83,7 @@
                     "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
                 ]
             },
-            "notScope": {
+            "notScopes": {
                 "contoso-prod": [
                     "/providers/Microsoft.Management/managementGroups/Decommissioned"
                 ]
