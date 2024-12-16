@@ -29,7 +29,7 @@
             },
             {
                 "pacEnvironment": "contoso-sandbox",
-                "environmentCategory": "nonprod",
+                "environmentCategory": "sandbox",
                 "scopes": [
                     "Management Group: Contoso-Sandbox"
                 ],
@@ -58,7 +58,7 @@
                 "fileNameStem": "security-baseline-parameters",
                 "environmentCategories": [
                     "prod",
-                    "nonprod"
+                    "sandbox"
                 ],
                 "title": "Contoso Security Policy effects",
                 // "markdownAdoWiki": true,
