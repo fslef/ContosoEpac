@@ -1,15 +1,15 @@
 ﻿{
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/arc-security/",
-    "assignment": {
-        "append": true,
-        "name": "arc-settings-on",
-        "displayName": "Azure Arc custom Initiative",
-        "description": "Configure security settings on Azure Arc-enabled machines"
-    },
     "definitionEntry": {
         "policySetName": "configure-security-settings-on-arc-enabled-machines",
         "displayName": "Configure Security Settings on Arc-enabled Machines",
+        "assignment": {
+            "append": true,
+            "name": "arc-settings-on",
+            "displayName": "Azure Arc custom Initiative",
+            "description": "Configure security settings on Azure Arc-enabled machines"
+        },
         "nonComplianceMessages": [
             {
                 "message": "Azure Monitor Agent is required by security policies.",
