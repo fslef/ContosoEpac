@@ -10,13 +10,36 @@
         "policySetName": "configure-security-settings-on-arc-enabled-machines",
         "displayName": "Configure Security Settings on Arc-enabled Machines",
         "nonComplianceMessages": [
-
             {
                 "message": "Azure Monitor Agent is required by security policies.",
                 // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
                 "policyDefinitionReferenceId":[
                     "ConfigureWindowsArcAzureMonitorAgent",
                     "ConfigureLinuxArcAzureMonitorAgent"
+                ]
+            },
+            {
+                "message": "Change Tracking & Inventory is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId":[
+                    "ConfigureChangeTrackingExtensionForLinuxArc",
+                    "ConfigureChangeTrackingExtensionForWindowsArc"
+                ]
+            },
+            {
+                "message": "Data Collection Rules for SOC is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId":[
+                    "LinuxArcMachinesToBeAssociatedWithSocDcr",
+                    "WindowsArcMachinesToBeAssociatedWithSocDcr"
+                ]
+            },
+            {
+                "message": "Data Collection Rules for Change Tracking & Inventory is required by security policies.",
+                // Policy specific nonComplianceMessage. You must include the policyDefinitionReferenceId as defined in the Policy Set.
+                "policyDefinitionReferenceId":[
+                    "LinuxArcMachinesToBeAssociatedWithCtiDcr",
+                    "WindowsArcMachinesToBeAssociatedWithCtiDcr"
                 ]
             }
         ]
