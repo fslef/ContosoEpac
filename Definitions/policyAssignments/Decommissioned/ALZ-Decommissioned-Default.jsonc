@@ -11,6 +11,7 @@
             "nodeName": "Guardrails",
             "assignment": {
                 "name": "Enforce-ALZ-Decomm",
+                "append": true,
                 "displayName": "Enforce ALZ Decommissioned Guardrails",
                 "description": "This initiative will help enforce and govern subscriptions that are placed within the decommissioned Management Group as part of your Subscription decommissioning process. See https://aka.ms/alz/policies for more information."
             },
