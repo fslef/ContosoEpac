@@ -6,7 +6,7 @@
         "displayName": "Configure Security Settings on Arc-enabled Machines",
         "assignment": {
             "append": true,
-            "name": "arc-settings-on",
+            "name": "arc-settings",
             "displayName": "Azure Arc custom Initiative",
             "description": "Configure security settings on Azure Arc-enabled machines"
         },
@@ -61,7 +61,7 @@
         {
             "nodeName": "Sandbox/",
             "assignment": {
-                "name": "-sbx",
+                "name": "sbx-",
                 "displayName": "Sandbox ",
                 "description": "Sandbox Arc-connected machines controls enforcement with "
             },
@@ -74,7 +74,7 @@
         {
             "nodeName": "Prod/",
             "assignment": {
-                "name": "-prd",
+                "name": "prd-",
                 "displayName": "Prod ",
                 "description": "Prod Arc-connected machines controls enforcement with "
             },
