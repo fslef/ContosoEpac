@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/arc-security/",
     "assignment": {
-        "name": "security-settings-on-arc",
+        "name": "arc-settings-on",
         "displayName": "Configure Security Settings on Arc-enabled Machines",
         "description": "Configure security settings on Azure Arc-enabled machines, including installing Azure Monitor Agent, configuring Change Tracking & Inventory VM extension and DCR, and DCR for SOC."
     },
@@ -60,7 +60,7 @@
         {
             "nodeName": "Sandbox/",
             "assignment": {
-                "name": "sbx-",
+                "name": "-sbx",
                 "displayName": "Sandbox ",
                 "description": "Sandbox Arc-connected machines controls enforcement with "
             },
@@ -73,7 +73,7 @@
         {
             "nodeName": "Prod/",
             "assignment": {
-                "name": "pr-",
+                "name": "-prd",
                 "displayName": "Prod ",
                 "description": "Prod Arc-connected machines controls enforcement with "
             },
