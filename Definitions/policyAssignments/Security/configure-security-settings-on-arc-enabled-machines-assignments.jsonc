@@ -56,12 +56,34 @@
         "CTI-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/Contoso-CT-DCR",
         "SOC-DCR": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourceGroups/security-eu/providers/Microsoft.Insights/dataCollectionRules/SOC-DCR"
     },
-    "scope": {
-        "contoso-sandbox": [
-            "/providers/Microsoft.Management/managementGroups/Sandbox"
-        ],
-        "contoso-prod": [
-            "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
-        ]
-    }
+    "children": [
+        {
+            "nodeName": "Sandbox/",
+            "assignment": {
+                "name": "sbx-",
+                "displayName": "Sandbox ",
+                "description": "Sandbox Arc-connected machines controls enforcement with "
+            },
+            "parameterSelector": "sandbox",
+            "scope": {
+                "contoso-sandbox": [
+                    "/providers/Microsoft.Management/managementGroups/sandbox"
+                ]
+            }
+        },
+        {
+            "nodeName": "Prod/",
+            "assignment": {
+                "name": "pr-",
+                "displayName": "Prod ",
+                "description": "Prod Arc-connected machines controls enforcement with "
+            },
+            "parameterSelector": "prod",
+            "scope": {
+                "contoso-prod": [
+                    "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+                ]
+            }
+        }
+    ]
 }

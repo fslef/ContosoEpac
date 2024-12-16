@@ -30,7 +30,7 @@
             "assignment": {
                 "name": "sbx-",
                 "displayName": "Sandbox ",
-                "description": "Sandbox Environment controls enforcement with "
+                "description": "Sandbox security baseline controls enforcement with "
             },
             "parameterSelector": "sandbox",
             "scope": {
@@ -44,7 +44,7 @@
             "assignment": {
                 "name": "pr-",
                 "displayName": "Prod ",
-                "description": "Prod Environment controls enforcement with "
+                "description": "Prod security baseline controls enforcement with "
             },
             "parameterSelector": "prod",
             "scope": {
