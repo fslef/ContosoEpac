@@ -26,7 +26,7 @@
     },
     "policyDefinitions": [
       {
-        "policyDefinitionReferenceId": "configure-windows-arc-azure-monitor-agent",
+        "policyDefinitionReferenceId": "ConfigureWindowsArcAzureMonitorAgent",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/94f686d6-9a24-4e19-91f1-de937dc171a4",
         "parameters": {},
         "groupNames": [
@@ -34,7 +34,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "configure-linux-arc-azure-monitor-agent",
+        "policyDefinitionReferenceId": "ConfigureLinuxArcAzureMonitorAgent",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/845857af-0333-4c5d-bbbc-6076697da122",
         "parameters": {},
         "groupNames": [
@@ -42,7 +42,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "configure-change-tracking-extension-for-linux-arc",
+        "policyDefinitionReferenceId": "ConfigureChangeTrackingExtensionForLinuxArc",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/10caed8a-652c-4d1d-84e4-2805b7c07278",
         "parameters": {},
         "groupNames": [
@@ -50,7 +50,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "configure-change-tracking-extension-for-windows-arc",
+        "policyDefinitionReferenceId": "ConfigureChangeTrackingExtensionForWindowsArc",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4bb303db-d051-4099-95d2-e3e1428a4cd5",
         "parameters": {},
         "groupNames": [
@@ -58,7 +58,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "windows-arc-machines-to-be-associated-with-cti-dcr",
+        "policyDefinitionReferenceId": "WindowsArcMachinesToBeAssociatedWithCtiDcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ef9fe2ce-a588-4edd-829c-6247069dcfdb",
         "parameters": {
           "dcrResourceId": {
@@ -70,7 +70,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "windows-arc-machines-to-be-associated-with-soc-dcr",
+        "policyDefinitionReferenceId": "WindowsArcMachinesToBeAssociatedWithSocDcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/eab1f514-22e3-42e3-9a1f-e1dc9199355c",
         "parameters": {
           "dcrResourceId": {
@@ -82,7 +82,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "linux-arc-machines-to-be-associated-with-cti-dcr",
+        "policyDefinitionReferenceId": "LinuxArcMachinesToBeAssociatedWithCtiDcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/09a1f130-7697-42bc-8d84-8a9ea17e5192",
         "parameters": {
           "dcrResourceId": {
@@ -94,7 +94,7 @@
         ]
       },
       {
-        "policyDefinitionReferenceId": "linux-arc-machines-to-be-associated-with-soc-dcr",
+        "policyDefinitionReferenceId": "LinuxArcMachinesToBeAssociatedWithSocDcr",
         "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2ea82cdd-f2e8-4500-af75-67a2e084ca74",
         "parameters": {
           "dcrResourceId": {
