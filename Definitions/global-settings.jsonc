@@ -8,9 +8,13 @@
             "tenantId": "be4ae739-dea2-4afc-8dc0-9a04e4091840",
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateContoso",
             "desiredState": { // [optional]
-                "strategy": "ownedOnly", // default full
-                "keepDfcSecurityAssignments": true, // default false
-                "doNotDisableDeprecatedPolicies": false
+                "strategy": "full", // default full
+                "keepDfcSecurityAssignments": false, // default false
+                "doNotDisableDeprecatedPolicies": false,
+
+                "excludedPolicyAssignments": [
+                    "/subscriptions/15c7d45d-38bd-4349-a38d-6f5b4a922af8/resourcegroups/lab-arcbox-itpro/providers/microsoft.authorization/policyassignments/(arcbox)*"
+                ]
             },
             "managedIdentityLocation": "westeurope"
         },
