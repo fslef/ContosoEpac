@@ -12,9 +12,7 @@
                 "keepDfcSecurityAssignments": true, // default false
                 "doNotDisableDeprecatedPolicies": false
             },
-            "globalNotScopes": [
-                "/providers/Microsoft.Management/managementGroups/Decommissioned"
-            ],
+            "globalNotScopes": [],
             "managedIdentityLocation": "westeurope"
         },
         {
