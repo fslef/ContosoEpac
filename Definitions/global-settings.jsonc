@@ -12,7 +12,6 @@
                 "keepDfcSecurityAssignments": true, // default false
                 "doNotDisableDeprecatedPolicies": false
             },
-            "globalNotScopes": [],
             "managedIdentityLocation": "westeurope"
         },
         {
@@ -25,7 +24,6 @@
                 "keepDfcSecurityAssignments": true, // default false // default full
                 "doNotDisableDeprecatedPolicies": false
             },
-            "globalNotScopes": [],
             "managedIdentityLocation": "westeurope"
         }
     ]
