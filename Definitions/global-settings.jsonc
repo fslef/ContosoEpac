@@ -13,7 +13,7 @@
                 "doNotDisableDeprecatedPolicies": false
             },
             "globalNotScopes": [
-                "/providers/Microsoft.Management/managementGroups/Decomissioned"
+                "/providers/Microsoft.Management/managementGroups/Decommissioned"
             ],
             "managedIdentityLocation": "westeurope"
         },
