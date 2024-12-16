@@ -20,8 +20,8 @@
             "tenantId": "be4ae739-dea2-4afc-8dc0-9a04e4091840",
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/Sandbox",
             "desiredState": { // [optional]
-                "strategy": "ownedOnly", // default full
-                "keepDfcSecurityAssignments": true, // default false // default full
+                "strategy": "full", // default full
+                "keepDfcSecurityAssignments": false, // default false // default full
                 "doNotDisableDeprecatedPolicies": false
             },
             "managedIdentityLocation": "westeurope"
