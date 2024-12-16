@@ -9,3 +9,5 @@ Deploy-PolicyPlan -PacEnvironmentSelector 'contoso-prod' -DefinitionsRootFolder 
 # Deploy the roles for the sandbox and production environments
 Deploy-RolesPlan -PacEnvironmentSelector 'contoso-sandbox' -DefinitionsRootFolder '.\Definitions'
 Deploy-RolesPlan -PacEnvironmentSelector 'contoso-prod' -DefinitionsRootFolder '.\Definitions'
+
+Build-PolicyDocumentation -DefinitionsRootFolder '.\Definitions' -OutputFolder '.\Output'
