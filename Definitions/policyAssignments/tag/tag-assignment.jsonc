@@ -1,0 +1,57 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/Tag/",
+    "definitionEntryList": [
+        {
+            "policyName": "96d9a89c-0d67-41fc-899d-2b9599f76a24",
+            "displayName": "Adds the specified tag and value to subscriptions via a remediation task. If the tag exists with a different value it will not be changed. See https://aka.ms/azurepolicyremediation for more information on policy remediation.",
+            "assignment": {
+                "name": "subtag-",
+                "displayName": "Require Tag on subscription - ",
+                "description": "Require Tag for Subscriptions when any resource group is created or updated - "
+            }
+        }
+    ],
+    "children": [
+        {
+            "nodeName": "LabEnv/",
+            "parameters": {
+                "tagName": "LabEnvironment"
+            },
+            "children": [
+                {
+                    "nodeName": "Sandbox/",
+                    "assignment": {
+                        "name": "sb-",
+                        "displayName": "Sandbox ",
+                        "description": "Sandbox tag enforcement with"
+                    },
+                    "parameters": {
+                        "tagValue": "Sandbox"
+                    },
+                    "scope": {
+                        "contoso-sandbox": [
+                            "/providers/Microsoft.Management/managementGroups/sandbox"
+                        ]
+                    }
+                },
+                {
+                    "nodeName": "Prod/",
+                    "assignment": {
+                        "name": "pr-",
+                        "displayName": "Prod ",
+                        "description": "Prod tag enforcement with"
+                    },
+                    "parameters": {
+                        "tagValue": "PROD"
+                    },
+                    "scope": {
+                        "contoso-prod": [
+                            "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

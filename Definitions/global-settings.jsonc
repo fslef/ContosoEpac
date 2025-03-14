@@ -10,11 +10,7 @@
             "desiredState": { // [optional]
                 "strategy": "full", // default full
                 "keepDfcSecurityAssignments": false, // default false
-                "doNotDisableDeprecatedPolicies": false,
-
-                "excludedPolicyAssignments": [
-                    "/subscriptions/15c7d45d-38bd-4349-a38d-6f5b4a922af8/resourcegroups/lab-arcbox-itpro/providers/microsoft.authorization/policyassignments/(arcbox)*"
-                ]
+                "doNotDisableDeprecatedPolicies": false
             },
             "managedIdentityLocation": "westeurope"
         },

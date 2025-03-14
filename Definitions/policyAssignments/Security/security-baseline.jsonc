@@ -14,26 +14,6 @@
             }
         },
         {
-            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/9cb3cc7a-b39b-4b82-bc89-e5a5d9ff7b97",
-            "displayName": "Configure Azure Defender to be enabled on SQL Servers and SQL Managed Instances",
-            "assignment": {
-                "append": true,
-                "name": "sql-defender",
-                "displayName": "Configure Azure Defender to be enabled on SQL Servers and SQL Managed Instances",
-                "description": "Configure Azure Defender to be enabled on SQL Servers and SQL Managed Instances Initiative."
-            }
-        },
-        {
-            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/e77fc0b3-f7e9-4c58-bc13-cb753ed8e46e",
-            "displayName": "Configure Advanced Threat Protection to be enabled on open-source relational databases",
-            "assignment": {
-                "append": true,
-                "name": "atp-ossdb",
-                "displayName": "Configure Advanced Threat Protection to be enabled on open-source relational databases",
-                "description": "Configure Advanced Threat Protection to be enabled on open-source relational databases Initiative."
-            }
-        },
-        {
             "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f",
             "displayName": "NIST SP 800-53 Rev. 5",
             "assignment": {
@@ -71,7 +51,12 @@
                 "contoso-prod": [
                     "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
                 ]
-            }
+            }//,
+            // "notScopes": {
+            //     "contoso-prod": [
+            //         "/providers/Microsoft.Management/managementGroups/identity"
+            //     ]
+            //}
         }
     ]
 }

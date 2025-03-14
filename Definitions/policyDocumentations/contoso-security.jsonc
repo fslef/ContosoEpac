@@ -16,14 +16,6 @@
                     {
                         "shortName": "NIST-800-53",
                         "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-nist-800-53-r5"
-                    },
-                    {
-                        "shortName": "SQL-Defender",
-                        "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-sql-defender"
-                    },
-                    {
-                        "shortName": "ATP-OSSDB",
-                        "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-atp-ossdb"
                     }
                 ]
             },
@@ -41,14 +33,6 @@
                     {
                         "shortName": "NIST-800-53",
                         "id": "/providers/microsoft.management/managementgroups/sandbox/providers/microsoft.authorization/policyassignments/sbx-nist-800-53-r5"
-                    },
-                    {
-                        "shortName": "SQL-Defender",
-                        "id": "/providers/microsoft.management/managementgroups/sandbox/providers/microsoft.authorization/policyassignments/sbx-sql-defender"
-                    },
-                    {
-                        "shortName": "ATP-OSSDB",
-                        "id": "/providers/microsoft.management/managementgroups/sandbox/providers/microsoft.authorization/policyassignments/sbx-atp-ossdb"
                     }
                 ]
             }
@@ -61,44 +45,36 @@
                     "sandbox"
                 ],
                 "title": "Contoso Security Policy effects",
-                // "markdownAdoWiki": true,
-                // "markdownAdoWikiConfig": [
-                //     {
-                //         "adoOrganization": "MyOrganization",
-                //         "adoProject": "EPAC",
-                //         "adoWiki": "EPAC"
-                //     }
-                //]
+                "markdownAdoWiki": true,
+                "markdownAdoWikiConfig": [
+                    {
+                        "adoOrganization": "MyOrganization",
+                        "adoProject": "EPAC",
+                        "adoWiki": "EPAC"
+                    }
+                ]
             }
         ]
-    }//,
-    // "documentPolicySets": [
-    //     {
-    //         "pacEnvironment": "contoso-sandbox",
-    //         "fileNameStem": "contoso-compliance-initiatives",
-    //         "title": "Document Initiatives",
-    //         "policySets": [
-    //             {
-    //                 "shortName": "ASB",
-    //                 "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
-    //             },
-    //             {
-    //                 "shortName": "NIST-800-53",
-    //                 "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
-    //             },
-    //             {
-    //                 "shortName": "SQL-Defender",
-    //                 "id": "/providers/microsoft.authorization/policysetdefinitions/9cb3cc7a-b39b-4b82-bc89-e5a5d9ff7b97"
-    //             },
-    //             {
-    //                 "shortName": "ATP-OSSDB",
-    //                 "id": "/providers/microsoft.authorization/policysetdefinitions/e77fc0b3-f7e9-4c58-bc13-cb753ed8e46e"
-    //             }
-    //         ],
-    //         "environmentColumnsInCsv": [
-    //             "prod",
-    //             "nonprod"
-    //         ]
-    //     }
-    // ]
+    },
+    "documentPolicySets": [
+        {
+            "pacEnvironment": "contoso-sandbox",
+            "fileNameStem": "contoso-compliance-initiatives",
+            "title": "Document Initiatives",
+            "policySets": [
+                {
+                    "shortName": "MCSB",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
+                },
+                {
+                    "shortName": "NIST-800-53",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
+                }
+            ],
+            "environmentColumnsInCsv": [
+                "prod",
+                "nonprod"
+            ]
+        }
+    ]
 }
