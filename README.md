@@ -25,8 +25,3 @@ The EPAC solution, available at [aka.ms/epac](https://aka.ms/epac), streamlines 
   - **policySetDefinitions/** – Contains policy set definition files that group multiple policies together.
 
 For more details on the recommended file and folder structure, see the [Policy Assignment File Folder Structure Guidelines](https://azure.github.io/enterprise-azure-policy-as-code/policy-assignments/#policy-assignment-file-folder-structure-guidelines).
-
-
-## License
-
-This repository is licensed under the MIT License.
