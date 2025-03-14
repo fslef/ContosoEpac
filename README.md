@@ -15,11 +15,18 @@ The EPAC solution, available at [aka.ms/epac](https://aka.ms/epac), streamlines 
      ```
     - Appropriate permissions to execute scripts and deploy policy changes. For details on the required permissions, see the [official documentation](https://azure.github.io/enterprise-azure-policy-as-code/ci-cd-app-registrations/#assign-service-principals-permissions-in-azure).
 
+## Environments
 
-## Repository Structure
+The repository uses Contoso environments as examples in the configuration:
+
+- **contoso-prod:** Represents a production-like environment.
+- **contoso-sandbox:** Represents a sandbox or testing environment.
+
+These examples are defined in the [`Definitions/global-settings.jsonc`](Definitions/global-settings.jsonc) file and serve to illustrate how to organize and map policy assignments to different scopes.
+
+## Repository Folder Structure
 
 - **definitions/** – Contains all files needed for policy management following EPAC guidelines:
-  - **global-settings.jsonc** – Configures global settings and environment metadata.
   - **policyDefinitions/** – Stores individual policy definition files.
   - **policyAssignments/** – Holds policy assignment files that map policies (or policy sets) to specific scopes along with deployment parameters.
   - **policySetDefinitions/** – Contains policy set definition files that group multiple policies together.
