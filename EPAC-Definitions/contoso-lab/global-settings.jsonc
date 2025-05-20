@@ -21,7 +21,7 @@
             "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/Sandbox",
             "desiredState": { // [optional]
                 "strategy": "full", // default full
-                "keepDfcSecurityAssignments": false, // default false // default full
+                "keepDfcSecurityAssignments": false, // default false
                 "doNotDisableDeprecatedPolicies": false
             },
             "managedIdentityLocation": "westeurope"

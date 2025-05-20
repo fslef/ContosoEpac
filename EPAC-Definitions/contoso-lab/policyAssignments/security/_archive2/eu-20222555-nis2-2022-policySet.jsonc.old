@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+  "nodeName": "/root",
+  "definitionEntry": {
+    "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/42346945-b531-41d8-9e46-f95057672e88",
+    "displayName": "EU 2022/2555 (NIS2) 2022"
+  },
+  "assignment": {
+    "name": "sbx-nis2-eu-2022",
+    "displayName": "Sandbox NIS2 Directive - EU 2022",
+    "description": "Sandbox security baseline controls enforcement with NIS2 Directive - EU 2022 Initiative."
+  },
+  "metadata": {
+    "assignedBy": "epac/cafdd129-9197-47f4-af95-077f5816eab2/contoso-sandbox"
+  },
+  "parameters": {
+    "operationName-3b980d31-7904-4bb7-8575-5665739a8052": "Microsoft.Security/policies/write",
+    "memoryLimit-e345eecc-fa47-480f-9e88-67dcc122b164": "0",
+    "cpuLimit-e345eecc-fa47-480f-9e88-67dcc122b164": "0",
+    "effect-152b15f7-8e1f-4c1f-ab71-8c010ba5dbc0": "Disabled",
+    "minimumRSAKeySize-82067dbb-e53b-4e06-b631-546d197452d9": 2048,
+    "CertificateThumbprints-934345e1-4dfb-4c70-90d7-41990dc9608b": "THUMBPRINT1;THUMBPRINT2",
+    "effect-0a370ff3-6cab-4e85-8995-295fd854c5b8": "Disabled",
+    "effect-e71308d3-144b-4262-b144-efdc3cc90517": "Disabled",
+    "maximumDaysToRotate-d8cf8476-a2ec-4916-896e-992351803c44": 365,
+    "effect-98728c90-32c7-4049-8429-847dc0f4fe37": "Disabled",
+    "allowedProfiles-511f5417-5d12-434d-ab2e-816901e72a5e": [],
+    "virtualNetworkGatewayId-f1776c76-f58c-4245-a8d0-2b207198dc8b": "na",
+    "effect-18adea5e-f416-4d0f-8aa8-d24321e3e274": "Disabled",
+    "logAnalyticsWorkspaceId-f47b5582-33ec-4c5c-87c0-b010a6b2e917": "/subscriptions/7d1bf03a-4afc-4b07-b713-e13090f1c6fd/resourcegroups/security-eu/providers/microsoft.operationalinsights/workspaces/security-eu",
+    "virtualNetworkId-d416745a-506c-48b6-8ab1-83cb814bcaa3": "[\"/subscriptions/8b5b6fdd-88ef-4e58-8379-e0b332d55125/resourceGroups/MinArm/providers/Microsoft.Network/virtualNetworks/W2019-Scripting-vnet\", \"/subscriptions/15c7d45d-38bd-4349-a38d-6f5b4a922af8/resourceGroups/lab-arcbox-itpro/providers/Microsoft.Network/virtualNetworks/arcbox-VNet\"]",
+    "allowedEncryptionSets-d461a302-a187-421a-89ac-84acdb4edc04": [
+      "MyDiskEncryptionSet1",
+      "MyDiskEncryptionSet2"
+    ],
+    "installedApplication-ebb67efd-3c46-49b0-adfe-5599eb944998": "Microsoft*",
+    "subnetId-77e8b146-0078-4fb2-b002-e112381199f0": "/subscriptions/3325d488-770e-4483-bfa6-c7cdc271e9c6/resourceGroups/hub-eu-vnet/providers/Microsoft.Network/virtualNetworks/hub-eu-vnet/subnets/Tier0",
+    "evaluatedSkuNames-af35e2a4-ef96-44e7-a9ae-853dd97032c4": [
+      "Standard"
+    ],
+    "operationName-b954148f-4c11-4c38-8221-be76711e194a": "Microsoft.Sql/servers/firewallRules/write",
+    "approvedExtensions-c0e996f8-39cf-4af9-9f45-83fbde810432": [
+      "AzureDiskEncryption",
+      "AzurePolicyforWindows",
+      "MDE.Windows",
+      "AzurePolicyforLinux",
+      "MDE.Linux",
+      "MicrosoftMonitoringAgent"
+    ],
+    "effect-ac01ad65-10e5-46df-bdd9-6b0cad13e1d2": "Disabled"
+  },
+  "overrides": [
+    {
+      "value": "AuditIfNotExists",
+      "kind": "policyEffect",
+      "selectors": [
+        {
+          "kind": "policyDefinitionReferenceId",
+          "in": [
+            "331e8ea8-378a-410f-a2e5-ae22f38bb0da"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": {
+    "contoso-sandbox": [
+      "/providers/Microsoft.Management/managementGroups/sandbox"
+    ]
+  },
+  "definitionVersion": "1.*.*"
+}

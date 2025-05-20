@@ -3,10 +3,10 @@
     "nodeName": "/Backup/",
     "definitionEntryList": [
         {
-            "policyName": "615b01c4-d565-4f6f-8c6e-d130268e3a1a",
+            "policyName": "contoso-backup-blob-storage-account",
             "displayName": "Require Backup on all Blob Storage Accounts",
             "assignment": {
-                "name": "backup-",
+                "name": "backup-blob-",
                 "displayName": "Require backup on blob storage account - ",
                 "description": "Require backup on blob storage account - "
             }
@@ -17,9 +17,14 @@
             "nodeName": "Prod/",
             "parameters": {
                 "vaultLocation": "francecentral",
-                "backupPolicyId": "/subscriptions/8b5b6fdd-88ef-4e58-8379-e0b332d55125/resourceGroups/Lab-AzureBackup-Policies/providers/Microsoft.DataProtection/backupVaults/MyDemoVaultBackup/backupPolicies/blob-backup-policy",
-                "inclusionTagName": "Backup",
-                "inclusionTagValues": ["bp-blob-01"],
+                "backupPolicyId": "/subscriptions/8b5b6fdd-88ef-4e58-8379-e0b332d55125/resourceGroups/Lab-AzureBackup-Policies/providers/Microsoft.DataProtection/backupVaults/MyDemoVaultBackup/backupPolicies/bckpol-03",
+                "inclusionTagName": "backup",
+                "inclusionTagValues": [
+                    "bp-blob-01"
+                ],
+                "containersList": [
+                    "container01"
+                ],
                 "effect": "DeployIfNotExists"
             },
             "assignment": {

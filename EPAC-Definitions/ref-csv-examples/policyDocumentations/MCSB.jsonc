@@ -1,0 +1,29 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentAssignments": {
+        "environmentCategories": [
+            {
+                "pacEnvironment": "contoso-prod",
+                "environmentCategory": "prod",
+                "scopes": [
+                    "Management Group: Intermediatecontoso"
+                ],
+                "representativeAssignments": [
+                    {
+                        "shortName": "MCSB",
+                        "id": "/providers/Microsoft.Management/managementGroups/intermediatecontoso/providers/Microsoft.Authorization/policyAssignments/pr-mcsb"
+                    }
+                ]
+            }
+        ],
+        "documentationSpecifications": [
+            {
+                "fileNameStem": "MCSB",
+                "environmentCategories": [
+                    "prod"
+                ],
+                "title": "Contoso Policy effects"
+            }
+        ]
+    }
+}

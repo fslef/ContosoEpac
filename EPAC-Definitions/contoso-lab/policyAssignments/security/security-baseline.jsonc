@@ -22,6 +22,46 @@
                 "displayName": "NIST SP 800-53 Rev. 5",
                 "description": "NIST SP 800-53 Rev. 5 Initiative."
             }
+        },
+        {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/32ff9e30-4725-4ca7-ba3a-904a7721ee87",
+            "displayName": "NIS2 - Preview",
+            "assignment": {
+                "append": true,
+                "name": "nis2-preview",
+                "displayName": "NIS2 - Preview",
+                "description": "NIS2 - Preview Initiative."
+            }
+        },
+        {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/42346945-b531-41d8-9e46-f95057672e88",
+            "displayName": "NIS2 Directive - EU 2022",
+            "assignment": {
+                "append": true,
+                "name": "nis2-eu-2022",
+                "displayName": "NIS2 Directive - EU 2022",
+                "description": "NIS2 Directive - EU 2022 Initiative."
+            }
+        },
+        {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/184a0e05-7b06-4a68-bbbe-13b8353bc613",
+            "displayName": "NIST Cybersecurity Framework (CSF) v2.0",
+            "assignment": {
+                "append": true,
+                "name": "nist-csf",
+                "displayName": "NIST Cybersecurity Framework (CSF) v2.0",
+                "description": "NIST Cybersecurity Framework (CSF) v2.0 Initiative."
+            }
+        },
+        {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/5e4ff661-23bf-42fa-8e3a-309a55091cc7",
+            "displayName": "ISO/IEC 27001:2022",
+            "assignment": {
+                "append": true,
+                "name": "iso-iec-27001-2022",
+                "displayName": "ISO/IEC 27001:2022",
+                "description": "ISO/IEC 27001:2022 Initiative."
+            }
         }
     ],
     "children": [

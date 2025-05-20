@@ -1,0 +1,33 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentAssignments": {
+        "environmentCategories": [
+            {
+                "pacEnvironment": "contoso-prod",
+                "environmentCategory": "prod",
+                "scopes": [
+                    "Management Group: Intermediatecontoso"
+                ],
+                "representativeAssignments": [
+                    {
+                        "shortName": "MCSB",
+                        "id": "/providers/Microsoft.Management/managementGroups/intermediatecontoso/providers/Microsoft.Authorization/policyAssignments/pr-mcsb"
+                    },
+                    {
+                        "shortName": "NIST-800-53",
+                        "id": "/providers/Microsoft.Management/managementGroups/intermediatecontoso/providers/Microsoft.Authorization/policyAssignments/pr-nist-800-53-r5"
+                    }
+                ]
+            }
+        ],
+        "documentationSpecifications": [
+            {
+                "fileNameStem": "MCSB-NIST",
+                "environmentCategories": [
+                    "prod"
+                ],
+                "title": "Contoso Policy effects"
+            }
+        ]
+    }
+}

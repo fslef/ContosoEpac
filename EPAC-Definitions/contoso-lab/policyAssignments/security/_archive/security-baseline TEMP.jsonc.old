@@ -1,0 +1,51 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/Security/",
+   // "parameterFile": "security-baseline-parameters.csv",
+    "definitionEntryList": [
+        {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/184a0e05-7b06-4a68-bbbe-13b8353bc613",
+            "displayName": "NIST Cybersecurity Framework (CSF) v2.0",
+            "assignment": {
+                "append": true,
+                "name": "nist-csf-v2",
+                "displayName": "NIST Cybersecurity Framework (CSF) v2.0",
+                "description": "NIST Cybersecurity Framework (CSF) v2.0 Initiative."
+            }
+        }
+    ],
+    "children": [
+        {
+            "nodeName": "Sandbox/",
+            "assignment": {
+                "name": "sbx-",
+                "displayName": "Sandbox ",
+                "description": "Sandbox security baseline controls enforcement with "
+            },
+            "scope": {
+                "contoso-sandbox": [
+                    "/providers/Microsoft.Management/managementGroups/sandbox"
+                ]
+            }
+        },
+        {
+            "nodeName": "Prod/",
+            "assignment": {
+                "name": "pr-",
+                "displayName": "Prod ",
+                "description": "Prod security baseline controls enforcement with "
+            },
+
+            "scope": {
+                "contoso-prod": [
+                    "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+                ]
+            }//,
+            // "notScopes": {
+            //     "contoso-prod": [
+            //         "/providers/Microsoft.Management/managementGroups/identity"
+            //     ]
+            //}
+        }
+    ]
+}

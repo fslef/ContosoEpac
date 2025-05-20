@@ -1,0 +1,42 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/Backup/",
+    "definitionEntryList": [
+        {
+            "policyName": "contoso-backup-file-storage-account",
+            "displayName": "Require Backup on all file Storage Accounts",
+            "assignment": {
+                "name": "backup-file-",
+                "displayName": "Require backup on file storage account - ",
+                "description": "Require backup on file storage account - "
+            }
+        }
+    ],
+    "children": [
+        {
+            "nodeName": "Prod/",
+            "parameters": {
+                "vaultLocation": "francecentral",
+                "vaultName": "MyDemoVaultBackup",
+                "vaultRGName": "Lab-AzureBackup-Policies",
+                "policyName": "bckpol-06",
+                "backupPolicyId": "/subscriptions/8b5b6fdd-88ef-4e58-8379-e0b332d55125/resourceGroups/Lab-AzureBackup-Policies/providers/Microsoft.RecoveryServices/vaults/MyRecoveryServiceVaullt/backupPolicies/bckpol-06",
+                "inclusionTagName": "backup",
+                "inclusionTagValues": [
+                    "bp-file-06"
+                ],
+                "effect": "DeployIfNotExists"
+            },
+            "assignment": {
+                "name": "prod-",
+                "displayName": "Prod",
+                "description": "Prod Backup Enforcement"
+            },
+            "scope": {
+                "contoso-prod": [
+                    "/subscriptions/8b5b6fdd-88ef-4e58-8379-e0b332d55125"
+                ]
+            }
+        }
+    ]
+}

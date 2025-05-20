@@ -1,0 +1,59 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentPolicySets": [
+        {
+            "pacEnvironment": "contoso-sandbox",
+            "fileNameStem": "MCSB",
+            "title": "Document Initiatives",
+            "policySets": [
+                {
+                    "shortName": "MCSB",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
+                },
+                // {
+                //     "shortName": "NIST-800-53",
+                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
+                // },
+                // {
+                //     "shortName": "NIS2-Preview",
+                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/32ff9e30-4725-4ca7-ba3a-904a7721ee87"
+                // },
+                // {
+                //     "shortName": "NIS2-EU-2022",
+                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/42346945-b531-41d8-9e46-f95057672e88"
+                // },
+                // {
+                //     "shortName": "NIST CSF V2.0",
+                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/184a0e05-7b06-4a68-bbbe-13b8353bc613"
+                // },
+                // {
+                //     "shortName": "ISO/IEC 27001 2022",
+                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/5e4ff661-23bf-42fa-8e3a-309a55091cc7"
+                // }
+            ],
+            "environmentColumnsInCsv": [
+                "prod",
+                "sandbox"
+            ]
+        },
+        {
+            "pacEnvironment": "contoso-sandbox",
+            "fileNameStem": "MCSB-NIST",
+            "title": "Document Initiatives",
+            "policySets": [
+                {
+                    "shortName": "MCSB",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
+                },
+                {
+                    "shortName": "NIST-800-53",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
+                }
+            ],
+            "environmentColumnsInCsv": [
+                "prod",
+                "sandbox"
+            ]
+        }
+    ]
+}
