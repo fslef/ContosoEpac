@@ -12,10 +12,6 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "enabled": true,
   "osvVulnerabilityAlerts": true,
-  "updateTypes": [
-    "major",
-    "minor"
-  ],
   "ignoreUnstable": true,
   "patch": {
     "enabled": false
