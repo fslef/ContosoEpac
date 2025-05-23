@@ -37,7 +37,7 @@ jobs:
     uses: ./.github/workflows/deploy-policy.yml
     with:
       pacEnvironmentSelector: epac-sandbox
-      planGitHubEnvironment: PAC-SANDBOX
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
@@ -49,7 +49,7 @@ jobs:
     uses: ./.github/workflows/deploy-roles.yml
     with:
       pacEnvironmentSelector: epac-sandbox
-      planGitHubEnvironment: PAC-SANDBOX
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
@@ -63,7 +63,7 @@ jobs:
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: EPAC-PROD
+      planGitHubEnvironment: EPAC-PROD-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
