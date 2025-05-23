@@ -12,21 +12,21 @@
   "dependencyDashboardOSVVulnerabilitySummary": "all",
   "enabled": true,
   "osvVulnerabilityAlerts": true,
+  "updateTypes": [
+    "major",
+    "minor"
+  ],
+  "ignoreUnstable": true,
+  "patch": {
+    "enabled": false
+  },
   "packageRules": [
-    {
-      "matchUpdateTypes": [
-        "major",
-        "minor"
-      ],
-      "enabled": true,
-      "description": "Enable only major and minor updates"
-    },
     {
       "matchUpdateTypes": [
         "patch"
       ],
       "enabled": false,
-      "description": "Disable patch updates"
+      "description": "Disable patch updates globally"
     },
     {
       "groupName": "Docker",
