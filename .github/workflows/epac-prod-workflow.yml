@@ -20,35 +20,35 @@ permissions:
 
 jobs:
   plan:
-    name: Plan tenant
+    name: Plan Production
     uses: ./.github/workflows/plan.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-PLAN
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployPolicy:
-    name: Deploy tenant Policy Changes
+    name: Deploy Production Policy Changes
     needs: plan
     if: needs.plan.outputs.deployPolicyChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-policy.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-DEPLOY-POLICY
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployRoles:
-    name: Deploy tenant Role Changes
+    name: Deploy Production Role Changes
     needs: plan
     if: needs.plan.outputs.deployRoleChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-roles.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-DEPLOY-ROLES
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
