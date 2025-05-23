@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC Dev Workflow
+name: EPAC Sandbox Workflow
 
 on:
   push:
