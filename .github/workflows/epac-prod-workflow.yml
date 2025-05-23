@@ -9,6 +9,7 @@ on:
       - closed
     paths:
       - 'EPAC-Definitions/contoso-lab/**'
+  workflow_dispatch:
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
