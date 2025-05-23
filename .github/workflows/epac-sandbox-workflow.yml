@@ -36,19 +36,19 @@ jobs:
     if: needs.plan.outputs.deployPolicyChanges == 'yes'
     uses: ./.github/workflows/deploy-policy.yml
     with:
-      pacEnvironmentSelector: epac-sandbox
+      pacEnvironmentSelector: contoso-sandbox
       planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployRoles:
-    name: Deploy epac-sandbox Role Changes
+    name: Deploy contoso-sandbox Role Changes
     needs: plan
     if: needs.plan.outputs.deployRoleChanges == 'yes'
     uses: ./.github/workflows/deploy-roles.yml
     with:
-      pacEnvironmentSelector: epac-sandbox
+      pacEnvironmentSelector: contoso-sandbox
       planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
