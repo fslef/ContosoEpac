@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC Dev Workflow
+name: EPAC Sandbox Workflow
 
 on:
   push:
@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   plan:
-    name: Plan epac-dev
+    name: Plan epac-sandbox
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: contoso-sandbox
@@ -31,25 +31,25 @@ jobs:
     secrets: inherit
 
   deployPolicy:
-    name: Deploy contoso-sandbox Policy Changes
+    name: Deploy epac-sandbox Policy Changes
     needs: plan
     if: needs.plan.outputs.deployPolicyChanges == 'yes'
     uses: ./.github/workflows/deploy-policy.yml
     with:
-      pacEnvironmentSelector: epac-sandbox
-      planGitHubEnvironment: PAC-SANDBOX
+      pacEnvironmentSelector: contoso-sandbox
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployRoles:
     name: Deploy epac-sandbox Role Changes
-    needs: plan
+    needs: [plan, deployPolicy]
     if: needs.plan.outputs.deployRoleChanges == 'yes'
     uses: ./.github/workflows/deploy-roles.yml
     with:
-      pacEnvironmentSelector: epac-sandbox
-      planGitHubEnvironment: PAC-SANDBOX
+      pacEnvironmentSelector: contoso-sandbox
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
@@ -63,7 +63,7 @@ jobs:
     uses: ./.github/workflows/plan.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: EPAC-PROD
+      planGitHubEnvironment: EPAC-PROD-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit

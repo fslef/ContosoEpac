@@ -26,9 +26,9 @@ These examples are defined in the [`Definitions/global-settings.jsonc`](Definiti
 
 ## Repository Folder Structure
 
-- **definitions/** – Contains all files needed for policy management following EPAC guidelines:
-  - **policyDefinitions/** – Stores individual policy definition files.
+- **EPAC-Definitions/contoso-lab/** – Contains all files needed for policy management following EPAC guidelines:
+  - **policyEPAC-Definitions/contoso-lab/** – Stores individual policy definition files.
   - **policyAssignments/** – Holds policy assignment files that map policies (or policy sets) to specific scopes along with deployment parameters.
-  - **policySetDefinitions/** – Contains policy set definition files that group multiple policies together.
+  - **policySetEPAC-Definitions/contoso-lab/** – Contains policy set definition files that group multiple policies together.
 
 For more details on the recommended file and folder structure, see the [Policy Assignment File Folder Structure Guidelines](https://azure.github.io/enterprise-azure-policy-as-code/policy-assignments/#policy-assignment-file-folder-structure-guidelines).

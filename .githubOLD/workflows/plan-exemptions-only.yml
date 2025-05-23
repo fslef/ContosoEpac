@@ -38,17 +38,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Install Required Modules
-        uses: Azure/powershell@v2
+        uses: Azure/powershell@53dd145408794f7e80f97cfcca04155c85234709 # v2
         with:
           inlineScript: |
             Install-Module EnterprisePolicyAsCode -Force
           azPSVersion: "latest"
 
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@a457da9ea143d694b1b9c7c869ebb04ebe844ef5 # v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
@@ -56,7 +56,7 @@ jobs:
           allow-no-subscriptions: true
 
       - name: Plan
-        uses: azure/powershell@v2
+        uses: azure/powershell@53dd145408794f7e80f97cfcca04155c85234709 # v2
         with:
           inlineScript: |
             Build-DeploymentPlans -PacEnvironmentSelector ${{ env.pacEnvironmentSelector }} -BuildExemptionsOnly -InformationAction Continue
@@ -78,7 +78,7 @@ jobs:
 
       - name: Upload Deployment Plan as Artifact
         if: steps.detectPlan.outputs.deployPolicyChanges == 'yes' || steps.detectPlan.outputs.deployRoleChanges == 'yes'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: "plans-${{ inputs.pacEnvironmentSelector }}"
           path: ${{ env.PAC_OUTPUT_FOLDER }}

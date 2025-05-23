@@ -1,5 +1,5 @@
 # This pipeline is used to deploy Policies, Initiative definitions and Assignments into Azure.
-name: EPAC Tenant Workflow
+name: EPAC Prod Workflow
 
 on:
   pull_request:
@@ -8,7 +8,7 @@ on:
     types:
       - closed
     paths:
-      - 'EPAC-Definitions/contoso-lab/**'
+      - "EPAC-Definitions/contoso-lab/**"
 
 env:
   PAC_OUTPUT_FOLDER: ./Output
@@ -20,35 +20,35 @@ permissions:
 
 jobs:
   plan:
-    name: Plan tenant
+    name: Plan prod
     uses: ./.github/workflows/plan.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-PLAN
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-PLAN
       PAC_OUTPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployPolicy:
-    name: Deploy tenant Policy Changes
+    name: Deploy prod Policy Changes
     needs: plan
     if: needs.plan.outputs.deployPolicyChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-policy.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-DEPLOY-POLICY
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
   deployRoles:
-    name: Deploy tenant Role Changes
-    needs: plan
+    name: Deploy prod Role Changes
+    needs: [plan, deployPolicy]
     if: needs.plan.outputs.deployRoleChanges == 'yes' && github.ref == 'refs/heads/main'
     uses: ./.github/workflows/deploy-roles.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-DEPLOY-ROLES
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_INPUT_FOLDER: ./Output
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
