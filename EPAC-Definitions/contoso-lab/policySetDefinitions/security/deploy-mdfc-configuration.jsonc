@@ -1,0 +1,99 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-set-definition-schema.json",
+    "name": "deploy-mdfc-config",
+    "properties": {
+        "displayName": "Contoso - Configure Microsoft Defender for Cloud plans",
+        "policyType": "Custom",
+        "description": "Microsoft Defender for Cloud provides comprehensive, cloud-native protections from development to runtime in multi-cloud environments. Use the policy initiative to configure Defender for Cloud plans and extensions to be enabled on selected scope(s).",
+        "metadata": {
+            "version": "0.1.0",
+            "source": "RIB-Hub-Platform/EPAC",
+            "category": "Security Center"
+        },
+        "parameters": {
+            "enableDefenderCSPMPlan": {
+                "type": "String",
+                "displayname": "Enable Defender for Cloud CSPM plan",
+                "description": "Enable the Microsoft Defender for Cloud CSPM plan. This plan provides continuous assessment and security recommendations for your Azure resources.",
+                "defaultValue": "disabled"
+            },
+        "policyDefinitions": [
+            {
+                "policyDefinitionReferenceId": "deployDefenderCSPMFullPlans",
+                "policyDefinitionName": "72f8cee7-2937-403d-84a1-a4e3e57f3c21",
+                "parameters": {
+                    "enableDefenderCSPMPlan": {
+                        "value": "[parameters('enableDefenderCSPMPlan')]"
+                    }
+                },
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderContainersFullPlans",
+                "policyDefinitionName": "efd4031d-b232-4595-babf-ae817348e91b",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderAI",
+                "policyDefinitionName": "359a48a3-351a-4618-bb32-f1628645694b",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderStorageFullPlans",
+                "policyDefinitionName": "cfdc5972-75b3-4418-8ae1-7f5c36839390",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderServersFullPlans",
+                "policyDefinitionName": "5eb6d64a-4086-4d7a-92da-ec51aed0332d",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderSqlServersOnVMs",
+                "policyDefinitionName": "50ea7265-7d8c-429e-9a7d-ca1f410191c3",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderAppServices",
+                "policyDefinitionName": "b40e7bcd-a1e5-47fe-b9cf-2f534d0bfb7d",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderSqlServers",
+                "policyDefinitionName": "b99b73e7-074b-4089-9395-b7236f094491",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderKeyVaults",
+                "policyDefinitionName": "1f725891-01c0-420a-9059-4fa46cb770b7",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderArm",
+                "policyDefinitionName": "b7021b2b-08fd-4dc0-9de7-3c6ece09faf9",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderOpenSourceRelationalDatabases",
+                "policyDefinitionName": "44433aa3-7ec2-4002-93ea-65c65ff0310a",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderCosmosDbs",
+                "policyDefinitionName": "82bf5b87-728b-4a74-ba4d-6123845cf542",
+                "parameters": {},
+                "definitionVersion": "1.*.*"
+            }
+        ]
+    }
+}
