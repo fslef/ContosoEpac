@@ -2,8 +2,8 @@
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-set-definition-schema.json",
     "name": "deploy-mdfc-config",
     "properties": {
-        "displayName": "Contoso - Configure Microsoft Defender for Cloud plans",
         "policyType": "Custom",
+        "displayName": "Contoso - Configure Microsoft Defender for Cloud plans",
         "description": "Microsoft Defender for Cloud provides comprehensive, cloud-native protections from development to runtime in multi-cloud environments. Use the policy initiative to configure Defender for Cloud plans and extensions to be enabled on selected scope(s).",
         "metadata": {
             "version": "0.1.0",
@@ -11,19 +11,233 @@
             "category": "Security Center"
         },
         "parameters": {
-            "enableDefenderCSPMPlan": {
+            "defenderCSPMPlanEffect": {
                 "type": "String",
-                "displayname": "Enable Defender for Cloud CSPM plan",
-                "description": "Enable the Microsoft Defender for Cloud CSPM plan. This plan provides continuous assessment and security recommendations for your Azure resources.",
-                "defaultValue": "disabled"
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender CSPM plan policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Cloud Security Posture Management (CSPM) plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
             },
+            "defenderAppServicePlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender App Service policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud App Service plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderAzureSQLPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for SQL policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud SQL plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderOpenSourceDatabasePlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Open Source Relational Databases policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Open Source Relational Databases plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderARMPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for ARM policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud ARM plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderSQLOnMachinesPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for SQL on machines policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud SQL on machines plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderCosmosDbPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Cosmos DB policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Cosmos DB plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderContainersPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Containers policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Containers plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderKeyVaultsPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Key Vaults policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Key Vaults plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderServerPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Servers policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Servers plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "deployDefenderStoragePlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Storage policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud Storage plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderAIPlanEffect": {
+                "type": "String",
+                "defaultValue": "Disabled",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for AI policy effect",
+                    "description": "Controls the enforcement behavior of Defender for Cloud AI plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
+                }
+            },
+            "defenderCSPMSensitiveDataDiscovery": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Sensitive Data Discovery Enabled",
+                    "description": "Enable or disable the Sensitive Data Discovery add-on feature"
+                }
+            },
+            "defenderContainerRegistriesVulnerabilityAssessment": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Container Registries Vulnerability Assessment Enabled",
+                    "description": "Enable or disable the Container Registries Vulnerability Assessment add-on feature"
+                }
+            },
+            "defenderAgentlessDiscoveryForKubernetesEnabled": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Agentless Discovery for Kubernetes Enabled",
+                    "description": "Enable or disable the Agentless Discovery for Kubernetes add-on feature"
+                }
+            },
+            "defenderAgentlessVmScanning": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Agentless VM Scanning Enabled",
+                    "description": "Enable or disable the Agentless VM Scanning add-on feature"
+                }
+            },
+            "defenderCSPMEntraPermissionsManagement": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "CSPM Entra Permissions Management Enabled",
+                    "description": "Enable or disable the CSPM Entra Permissions Management add-on feature"
+                }
+            }
+        },
         "policyDefinitions": [
             {
                 "policyDefinitionReferenceId": "deployDefenderCSPMFullPlans",
                 "policyDefinitionName": "72f8cee7-2937-403d-84a1-a4e3e57f3c21",
                 "parameters": {
-                    "enableDefenderCSPMPlan": {
-                        "value": "[parameters('enableDefenderCSPMPlan')]"
+                    "effect": {
+                        "value": "[parameters('defenderCSPMPlanEffect')]"
+                    },
+                    "isSensitiveDataDiscoveryEnabled": {
+                        "value": "[parameters('defenderCSPMSensitiveDataDiscovery')]"
+                    },
+                    "isContainerRegistriesVulnerabilityAssessmentsEnabled": {
+                        "value": "[parameters('defenderContainerRegistriesVulnerabilityAssessment')]"
+                    },
+                    "isAgentlessDiscoveryForKubernetesEnabled": {
+                        "value": "[parameters('defenderAgentlessDiscoveryForKubernetesEnabled')]"
+                    },
+                    "isAgentlessVmScanningEnabled": {
+                        "value": "[parameters('defenderAgentlessVmScanning')]"
+                    },
+                    "isEntraPermissionsManagementEnabled": {
+                        "value": "[parameters('defenderCSPMEntraPermissionsManagement')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -31,67 +245,111 @@
             {
                 "policyDefinitionReferenceId": "deployDefenderContainersFullPlans",
                 "policyDefinitionName": "efd4031d-b232-4595-babf-ae817348e91b",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderContainersPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderAI",
                 "policyDefinitionName": "359a48a3-351a-4618-bb32-f1628645694b",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderAIPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderStorageFullPlans",
                 "policyDefinitionName": "cfdc5972-75b3-4418-8ae1-7f5c36839390",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('deployDefenderStoragePlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderServersFullPlans",
                 "policyDefinitionName": "5eb6d64a-4086-4d7a-92da-ec51aed0332d",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderServerPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderSqlServersOnVMs",
                 "policyDefinitionName": "50ea7265-7d8c-429e-9a7d-ca1f410191c3",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderSQLOnMachinesPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderAppServices",
                 "policyDefinitionName": "b40e7bcd-a1e5-47fe-b9cf-2f534d0bfb7d",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderAppServicePlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderSqlServers",
                 "policyDefinitionName": "b99b73e7-074b-4089-9395-b7236f094491",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderAzureSQLPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderKeyVaults",
                 "policyDefinitionName": "1f725891-01c0-420a-9059-4fa46cb770b7",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderKeyVaultsPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderArm",
                 "policyDefinitionName": "b7021b2b-08fd-4dc0-9de7-3c6ece09faf9",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderARMPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderOpenSourceRelationalDatabases",
                 "policyDefinitionName": "44433aa3-7ec2-4002-93ea-65c65ff0310a",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderOpenSourceDatabasePlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             },
             {
                 "policyDefinitionReferenceId": "deployDefenderCosmosDbs",
                 "policyDefinitionName": "82bf5b87-728b-4a74-ba4d-6123845cf542",
-                "parameters": {},
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderCosmosDbPlanEffect')]"
+                    }
+                },
                 "definitionVersion": "1.*.*"
             }
         ]
