@@ -7,7 +7,7 @@
         "description": "Microsoft Defender for Cloud provides comprehensive, cloud-native protections from development to runtime in multi-cloud environments. Use the policy initiative to configure Defender for Cloud plans and extensions to be enabled on selected scope(s).",
         "metadata": {
             "version": "0.1.0",
-            "source": "RIB-Hub-Platform/EPAC",
+            "source": "fslef/contosoEpac",
             "category": "Security Center"
         },
         "parameters": {
@@ -155,7 +155,7 @@
                     "description": "Controls the enforcement behavior of Defender for Cloud AI plan. Select DeployIfNotExists to automatically enable the plan, or Disabled to skip enforcement."
                 }
             },
-            "defenderCSPMSensitiveDataDiscovery": {
+            "defenderSensitiveDataDiscovery": {
                 "type": "String",
                 "defaultValue": "false",
                 "allowedValues": [
@@ -214,6 +214,74 @@
                     "displayName": "CSPM Entra Permissions Management Enabled",
                     "description": "Enable or disable the CSPM Entra Permissions Management add-on feature"
                 }
+            },
+            "defenderContainerSensor": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Container Sensor Enabled",
+                    "description": "Controls the container sensor extension"
+                }
+            },
+            "defenderStorageMalwareScanning": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Storage Malware Scanning Enabled",
+                    "description": "Enable or disable the Storage Malware Scanning add-on feature"
+                }
+            },
+            "defenderStorageMalwareScanningCapGB": {
+                "type": "Integer",
+                "defaultValue": 1000,
+                "metadata": {
+                    "displayName": "Storage Malware Scanning Cap GB",
+                    "description": "The maximum amount of data in GB that can be scanned by the Storage Malware Scanning add-on feature"
+                }
+            },
+            "defenderAiSuspiciousPromptevidence": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "AI Suspicious Prompt Evidence Enabled",
+                    "description": "Enable or disable the AI Suspicious Prompt Evidence add-on feature"
+                }
+            },
+            "defenderServerSubPlan": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Defender for Servers plans",
+                    "description": "Select a Defender for Servers plan"
+                },
+                "allowedValues": [
+                    "P1",
+                    "P2"
+                ],
+                "defaultValue": "P2"
+            },
+            "defenderServerMdeDesignatedSubscription": {
+                "type": "String",
+                "defaultValue": "false",
+                "allowedValues": [
+                    "true",
+                    "false"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Servers MDE Designated Subscription",
+                    "description": "The subscription that will be used to deploy the Defender for Servers MDE extension. This is required when using the P2 plan."
+                }
             }
         },
         "policyDefinitions": [
@@ -225,7 +293,7 @@
                         "value": "[parameters('defenderCSPMPlanEffect')]"
                     },
                     "isSensitiveDataDiscoveryEnabled": {
-                        "value": "[parameters('defenderCSPMSensitiveDataDiscovery')]"
+                        "value": "[parameters('defenderSensitiveDataDiscovery')]"
                     },
                     "isContainerRegistriesVulnerabilityAssessmentsEnabled": {
                         "value": "[parameters('defenderContainerRegistriesVulnerabilityAssessment')]"
@@ -248,6 +316,18 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderContainersPlanEffect')]"
+                    },
+                    "isContainerRegistriesVulnerabilityAssessmentsEnabled": {
+                        "value": "[parameters('defenderContainerRegistriesVulnerabilityAssessment')]"
+                    },
+                    "isAgentlessDiscoveryForKubernetesEnabled": {
+                        "value": "[parameters('defenderAgentlessDiscoveryForKubernetesEnabled')]"
+                    },
+                    "isAgentlessVmScanningEnabled": {
+                        "value": "[parameters('defenderAgentlessVmScanning')]"
+                    },
+                    "isContainerSensorEnabled": {
+                        "value": "[parameters('defenderContainerSensor')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -258,6 +338,9 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderAIPlanEffect')]"
+                    },
+                    "isAIPromptEvidenceEnabled": {
+                        "value": "[parameters('defenderAiSuspiciousPromptevidence')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -268,6 +351,15 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('deployDefenderStoragePlanEffect')]"
+                    },
+                    "isSensitiveDataDiscoveryEnabled": {
+                        "value": "[parameters('defenderSensitiveDataDiscovery')]"
+                    },
+                    "isOnUploadMalwareScanningEnabled": {
+                        "value": "[parameters('defenderStorageMalwareScanning')]"
+                    },
+                    "capGBPerMonthPerStorageAccount": {
+                        "value": "[parameters('defenderStorageMalwareScanningCapGB')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -278,6 +370,15 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderServerPlanEffect')]"
+                    },
+                    "isAgentlessVmScanningEnabled": {
+                        "value": "[parameters('defenderAgentlessVmScanning')]"
+                    },
+                    "subPlan": {
+                        "value": "[parameters('defenderServerSubPlan')]"
+                    },
+                    "isMdeDesignatedSubscriptionEnabled": {
+                        "value": "[parameters('defenderServerMdeDesignatedSubscription')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
