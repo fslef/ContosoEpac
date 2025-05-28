@@ -9,6 +9,13 @@ on:
       - closed
     paths:
       - 'EPAC-Definitions/contoso-lab/**'
+      - '.github/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'EPAC-Definitions/contoso-lab/**'
+      - '.github/**'
   workflow_dispatch:
 
 env:
