@@ -1,0 +1,44 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
+    "nodeName": "/mdfc/",
+    "children": [
+        {
+            "nodeName": "Sandbox/",
+            "assignment": {
+                "name": "sbx-",
+                "displayName": "Sandbox ",
+                "description": "Sandbox security baseline controls enforcement with "
+            },
+            "definitionEntryList": [
+                {
+                    "policySetId": "/providers/Microsoft.Management/managementGroups/Sandbox/providers/Microsoft.Authorization/policySetDefinitions/deploy-mdfc-config",
+                    "displayName": "Microsoft Defender for Cloud configuration",
+                    "assignment": {
+                        "append": true,
+                        "name": "mdfc-config",
+                        "displayName": "Microsoft Defender for Cloud configuration",
+                        "description": "Microsoft Defender for Cloud configuration Initiative."
+                    }
+                }
+            ],
+            "scope": {
+                "contoso-sandbox": [
+                    "/providers/Microsoft.Management/managementGroups/sandbox"
+                ]
+            }
+        }//,
+        // {
+        //     "nodeName": "Prod/",
+        //     "assignment": {
+        //         "name": "pr-",
+        //         "displayName": "Prod ",
+        //         "description": "Prod security baseline controls enforcement with "
+        //     },
+        //     "scope": {
+        //         "contoso-prod": [
+        //             "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+        //         ]
+        //     }
+        // }
+    ]
+}
