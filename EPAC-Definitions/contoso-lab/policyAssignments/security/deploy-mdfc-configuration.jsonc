@@ -16,7 +16,7 @@
                 "description": "This initiative deploys the MDFC configuration to the Sandbox environment. It ensures that MDFC is set up correctly.",
             },
             "definitionEntry": {
-                "policySetName": "deploy-mdfc-configuration"
+                "policySetName": "deploy-mdfc-config"
             },
             "parameters": {
             },
