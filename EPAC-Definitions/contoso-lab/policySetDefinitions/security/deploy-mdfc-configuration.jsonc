@@ -3,7 +3,7 @@
     "name": "deploy-mdfc-config",
     "properties": {
         "policyType": "Custom",
-        "displayName": "Contoso - Configure Microsoft Defender for Cloud plans",
+        "displayName": "[Contoso] Configure Microsoft Defender for Cloud plans",
         "description": "Microsoft Defender for Cloud provides comprehensive, cloud-native protections from development to runtime in multi-cloud environments. Use the policy initiative to configure Defender for Cloud plans and extensions to be enabled on selected scope(s).",
         "metadata": {
             "version": "0.1.0",

@@ -1,30 +1,46 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-assignment-schema.json",
     "nodeName": "/deploy-mdfc-config/",
-    "scope": {
-        "contoso-sandbox": [ // Replace with your EPAC environment name and validate the management group listed below exists
-            "/providers/Microsoft.Management/managementGroups/Sandbox"
-        ]
+    "definitionEntry": {
+        "policySetName": "deploy-mdfc-config",
+        "assignment": {
+            "append": true,
+            "name": "mdfc-config",
+            "displayName": "Configure Microsoft Defender for Cloud plans (custom)",
+            "description": "Configure Microsoft Defender for Cloud plans Custom Initiative"
+        }
     },
+    "nonComplianceMessages": [
+        {
+            "message": "MDFC configuration must comply with the ADR-2025-004: Security: Defender for Cloud (https://rib-software.atlassian.net/wiki/spaces/HubRnDGov/pages/1039433729/ADR-2025-004+Security+Defender+for+Cloud)"
+        }
+    ],
     "children": [
         {
-            "nodeName": "mdfc-configuration",
+            "nodeName": "Sandbox/",
             "assignment": {
-                "name": "Deploy MDFC Configuration",
-                "append": true,
-                "displayName": "Deploy MDFC Configuration",
-                "description": "This initiative deploys the MDFC configuration to the Sandbox environment. It ensures that MDFC is set up correctly.",
+                "name": "sbx-",
+                "displayName": "Sandbox ",
+                "description": "Sandbox MDFC configuration with "
             },
-            "definitionEntry": {
-                "policySetName": "deploy-mdfc-config"
+            "scope": {
+                "contoso-sandbox": [ // Replace with your EPAC environment name and validate the management group listed below exists
+                    "/providers/Microsoft.Management/managementGroups/Sandbox"
+                ]
+            }
+        },
+        {
+            "nodeName": "Prod/",
+            "assignment": {
+                "name": "pr-",
+                "displayName": "Prod ",
+                "description": "Prod MDFC configuration with "
             },
-            "parameters": {
-            },
-            "nonComplianceMessages": [
-                {
-                    "message": "MDFC configuration must comply with the ADR-2025-004: Security: Defender for Cloud (https://rib-software.atlassian.net/wiki/spaces/HubRnDGov/pages/1039433729/ADR-2025-004+Security+Defender+for+Cloud)"
-                }
-            ]
+            "scope": {
+                "contoso-prod": [ // Replace with your EPAC environment name and validate the management group listed below exists
+                    "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+                ]
+            }
         }
     ]
 }
