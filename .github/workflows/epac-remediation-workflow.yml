@@ -19,19 +19,19 @@ permissions:
 
 jobs:
   contosoSandbox:
-    name: 'Remediate contoso-sandbox environment'
+    name: 'Remediate Sandbox'
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-sandbox
       planGitHubEnvironment: CONTOSO-SANDBOX
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
-    secrets: inherit
+    #secrets: inherit
 
   contosoProd:
-    name: 'Remediate contoso-prod environment'
+    name: 'Remediate Prod'
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-prod
       planGitHubEnvironment: CONTOSO-PROD
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
-    secrets: inherit
+    #secrets: inherit
