@@ -18,20 +18,20 @@ permissions:
   id-token: write
 
 jobs:
-  epacDev:
-    name: 'Remediate epac-dev environment'
+  contosoSandbox:
+    name: 'Remediate contoso-sandbox environment'
     uses: ./.github/workflows/remediate.yml
     with:
-      pacEnvironmentSelector: epac-dev
-      planGitHubEnvironment: EPAC-DEV
+      pacEnvironmentSelector: contoso-sandbox
+      planGitHubEnvironment: CONTOSO-SANDBOX
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
-  tenant:
-    name: 'Remediate tenant environment'
+  contosoProd:
+    name: 'Remediate contoso-prod environment'
     uses: ./.github/workflows/remediate.yml
     with:
-      pacEnvironmentSelector: tenant
-      planGitHubEnvironment: TENANT-REMEDIATE-POLICY
+      pacEnvironmentSelector: contoso-prod
+      planGitHubEnvironment: CONTOSO-PROD
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
