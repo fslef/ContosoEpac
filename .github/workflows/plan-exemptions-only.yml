@@ -78,7 +78,7 @@ jobs:
 
       - name: Upload Deployment Plan as Artifact
         if: steps.detectPlan.outputs.deployPolicyChanges == 'yes' || steps.detectPlan.outputs.deployRoleChanges == 'yes'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "plans-${{ inputs.pacEnvironmentSelector }}"
           path: ${{ env.PAC_OUTPUT_FOLDER }}
