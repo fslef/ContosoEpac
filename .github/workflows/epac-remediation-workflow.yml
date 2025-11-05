@@ -23,7 +23,7 @@ jobs:
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-sandbox
-      planGitHubEnvironment: EPAC-CONTOSO-SANDBOX
+      planGitHubEnvironment: EPAC-SANDBOX
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit
 
@@ -32,6 +32,6 @@ jobs:
     uses: ./.github/workflows/remediate.yml
     with:
       pacEnvironmentSelector: contoso-prod
-      planGitHubEnvironment: EPAC-CONTOSO-PROD
+      planGitHubEnvironment: EPAC-PROD-DEPLOY
       PAC_DEFINITIONS_FOLDER: ./EPAC-Definitions/contoso-lab
     secrets: inherit

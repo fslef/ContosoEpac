@@ -1,0 +1,36 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentAssignments": {
+        "environmentCategories": [
+            {
+                "pacEnvironment": "contoso-prod",
+                "environmentCategory": "prod",
+                "scopes": [
+                    "Management Group: Intermediatecontoso"
+                ],
+                "representativeAssignments": [
+                    {
+                        "shortName": "MCSB",
+                        "id": "/providers/Microsoft.Management/managementGroups/intermediatecontoso/providers/Microsoft.Authorization/policyAssignments/pr-mcsb"
+                    },
+                    {
+                        "shortName": "MDFC",
+                        "id": "/providers/Microsoft.Management/managementGroups/intermediatecontoso/providers/Microsoft.Authorization/policyAssignments/pr-mdfc-config"
+                    }
+                ]
+            }
+        ]
+    },
+    "documentationSpecifications": [
+        {
+            "fileNameStem": "MCSB-MDFC",
+            "environmentCategories": [
+                "prod"
+            ],
+            "title": "Contoso Policy Effects",
+            "outputMarkdown": true,
+            "outputCsv": true,
+            "sortBy": "displayName"
+        }
+    ]
+}

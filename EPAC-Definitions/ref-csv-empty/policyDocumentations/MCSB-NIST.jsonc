@@ -3,17 +3,17 @@
     "documentPolicySets": [
         {
             "pacEnvironment": "contoso-sandbox",
-            "fileNameStem": "MCSB",
+            "fileNameStem": "MCSB-NIST",
             "title": "Document Initiatives",
             "policySets": [
                 {
                     "shortName": "MCSB",
                     "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
                 },
-                // {
-                //     "shortName": "NIST-800-53",
-                //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
-                // },
+                {
+                    "shortName": "NIST-800-53",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f"
+                }//,
                 // {
                 //     "shortName": "NIS2-Preview",
                 //     "id": "/providers/Microsoft.Authorization/policySetDefinitions/32ff9e30-4725-4ca7-ba3a-904a7721ee87"

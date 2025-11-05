@@ -1,0 +1,24 @@
+﻿{
+    "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/policy-documentation-schema.json",
+    "documentPolicySets": [
+        {
+            "pacEnvironment": "contoso-prod",
+            "fileNameStem": "MCSB-MDFC",
+            "title": "Document Initiatives",
+            "policySets": [
+                {
+                    "shortName": "MCSB",
+                    "id": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
+                },
+                {
+                    "shortName": "MDFC",
+                    "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policysetdefinitions/deploy-mdfc-config"
+                }
+            ],
+            "environmentColumnsInCsv": [
+                "sandbox",
+                "prod"
+            ]
+        }
+    ]
+}

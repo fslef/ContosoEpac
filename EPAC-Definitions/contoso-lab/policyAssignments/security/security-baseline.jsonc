@@ -90,7 +90,18 @@
             "scope": {
                 "contoso-prod": [
                     "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
+                ]//,
+                /*
+                "demo-tenant1": [
+                    "/providers/Microsoft.Management/managementGroups/DemoTenant1"
+                ],
+                "demo-tenant2": [
+                    "/providers/Microsoft.Management/managementGroups/DemoTenant2"
+                ],
+                "demo-tenant3": [
+                    "/providers/Microsoft.Management/managementGroups/DemoTenant3"
                 ]
+                */
             }//,
             // "notScopes": {
             //     "contoso-prod": [

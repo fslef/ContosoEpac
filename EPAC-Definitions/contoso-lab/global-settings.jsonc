@@ -13,6 +13,12 @@
                 "doNotDisableDeprecatedPolicies": false
             },
             "managedIdentityLocation": "westeurope"
+            // globalNotScopes example
+            /*
+            "globalNotScopes": [
+                "/providers/Microsoft.Management/managementGroups/PAC-Heinrich-Dev"
+            ],
+            */
         },
         {
             "pacSelector": "contoso-sandbox",
@@ -25,6 +31,45 @@
                 "doNotDisableDeprecatedPolicies": false
             },
             "managedIdentityLocation": "westeurope"
-        }
+        }//,
+        // Demo environments (tenant 1 to 3)
+        /*
+        {
+            "pacSelector": "demo-tenant1",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant1-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        {
+            "pacSelector": "demo-tenant2",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant2-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        {
+            "pacSelector": "demo-tenant3",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant3-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        */
     ]
 }

@@ -7,13 +7,13 @@
         "description": "Microsoft Defender for Cloud provides comprehensive, cloud-native protections from development to runtime in multi-cloud environments. Use the policy initiative to configure Defender for Cloud plans and extensions to be enabled on selected scope(s).",
         "metadata": {
             "version": "0.1.0",
-            "source": "fslef/contosoEpac",
+            "source": "fslef/contosoepac",
             "category": "Security Center"
         },
         "parameters": {
             "defenderCSPMPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -25,7 +25,7 @@
             },
             "defenderAppServicePlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -37,7 +37,7 @@
             },
             "defenderAzureSQLPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -49,7 +49,7 @@
             },
             "defenderOpenSourceDatabasePlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -61,7 +61,7 @@
             },
             "defenderARMPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -73,7 +73,7 @@
             },
             "defenderSQLOnMachinesPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -85,7 +85,7 @@
             },
             "defenderCosmosDbPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -97,7 +97,7 @@
             },
             "defenderContainersPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -109,7 +109,7 @@
             },
             "defenderKeyVaultsPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -121,7 +121,7 @@
             },
             "defenderServerPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -133,7 +133,7 @@
             },
             "deployDefenderStoragePlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -145,7 +145,7 @@
             },
             "defenderAIPlanEffect": {
                 "type": "String",
-                "defaultValue": "Disabled",
+                "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                     "DeployIfNotExists",
                     "Disabled"
@@ -157,7 +157,7 @@
             },
             "defenderSensitiveDataDiscovery": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -169,7 +169,7 @@
             },
             "defenderContainerRegistriesVulnerabilityAssessment": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -181,7 +181,7 @@
             },
             "defenderAgentlessDiscoveryForKubernetesEnabled": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -193,7 +193,7 @@
             },
             "defenderAgentlessVmScanning": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -205,7 +205,7 @@
             },
             "defenderCSPMEntraPermissionsManagement": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -217,7 +217,7 @@
             },
             "defenderContainerSensor": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -229,7 +229,7 @@
             },
             "defenderStorageMalwareScanning": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -241,7 +241,7 @@
             },
             "defenderStorageMalwareScanningCapGB": {
                 "type": "Integer",
-                "defaultValue": 1000,
+                "defaultValue": 10,
                 "metadata": {
                     "displayName": "Storage Malware Scanning Cap GB",
                     "description": "The maximum amount of data in GB that can be scanned by the Storage Malware Scanning add-on feature"
@@ -249,7 +249,7 @@
             },
             "defenderAiSuspiciousPromptevidence": {
                 "type": "String",
-                "defaultValue": "false",
+                "defaultValue": "true",
                 "allowedValues": [
                     "true",
                     "false"
@@ -271,7 +271,7 @@
                 ],
                 "defaultValue": "P2"
             },
-            "defenderServerMdeDesignatedSubscription": {
+            "defenderServerMdeDirectOnboarding": {
                 "type": "String",
                 "defaultValue": "false",
                 "allowedValues": [
@@ -279,8 +279,20 @@
                     "false"
                 ],
                 "metadata": {
-                    "displayName": "Defender for Servers MDE Designated Subscription",
-                    "description": "The subscription that will be used to deploy the Defender for Servers MDE extension. This is required when using the P2 plan."
+                    "displayName": "Defender for Servers MDE automated onboarding Enabled",
+                    "description": "Enable the Endpoint protection automated onboarding. This is required when using the P2 plan."
+                }
+            },
+            "defenderMdeIntegration": {
+                "type": "String",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                    "DeployIfNotExists",
+                    "Disabled"
+                ],
+                "metadata": {
+                    "displayName": "Defender for Servers MDE Integration Enabled with automated",
+                    "description": "Enable or disable the Defender for Servers MDE integration with automated onboarding"
                 }
             }
         },
@@ -378,7 +390,7 @@
                         "value": "[parameters('defenderServerSubPlan')]"
                     },
                     "isMdeDesignatedSubscriptionEnabled": {
-                        "value": "[parameters('defenderServerMdeDesignatedSubscription')]"
+                        "value": "[parameters('defenderServerMdeDirectOnboarding')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -419,6 +431,9 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderKeyVaultsPlanEffect')]"
+                    },
+                    "subPlan": {
+                        "value": "PerKeyVault"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -429,6 +444,9 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderARMPlanEffect')]"
+                    },
+                    "subPlan": {
+                        "value": "PerSubscription"
                     }
                 },
                 "definitionVersion": "1.*.*"
@@ -449,6 +467,36 @@
                 "parameters": {
                     "effect": {
                         "value": "[parameters('defenderCosmosDbPlanEffect')]"
+                    }
+                },
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderMdeIntegration_WDATP",
+                "policyDefinitionName": "da56d295-2889-41ce-a4cd-6f50fb93aa68",
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderMdeIntegration')]"
+                    }
+                },
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderMdeIntegration_WDATP_EXCLUDE_LINUX",
+                "policyDefinitionName": "f9e2bd2f-47c7-4059-8265-c5292aa62c8a",
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderMdeIntegration')]"
+                    }
+                },
+                "definitionVersion": "1.*.*"
+            },
+            {
+                "policyDefinitionReferenceId": "deployDefenderMdeIntegration_WDATP_UNIFIED_SOLUTION",
+                "policyDefinitionName": "48666c5d-cec1-4043-ab6b-1be05abb24f2",
+                "parameters": {
+                    "effect": {
+                        "value": "[parameters('defenderMdeIntegration')]"
                     }
                 },
                 "definitionVersion": "1.*.*"
