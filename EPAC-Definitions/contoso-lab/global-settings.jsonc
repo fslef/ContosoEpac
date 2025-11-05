@@ -16,7 +16,7 @@
             // globalNotScopes example
             /*
             "globalNotScopes": [
-                "/providers/Microsoft.Management/managementGroups/PAC-Heinrich-Dev"
+                "/providers/Microsoft.Management/managementGroups/PAC-FSLEF-Dev"
             ],
             */
         },
