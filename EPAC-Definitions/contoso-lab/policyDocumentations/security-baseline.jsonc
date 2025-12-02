@@ -14,6 +14,10 @@
                         "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-mcsb"
                     },
                     {
+                        "shortName": "MCSB-V2",
+                        "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-mcsb-v2"
+                    },
+                    {
                         "shortName": "NIST-800-53",
                         "id": "/providers/microsoft.management/managementgroups/intermediatecontoso/providers/microsoft.authorization/policyassignments/pr-nist-800-53-r5"
                     },
@@ -45,6 +49,10 @@
                     {
                         "shortName": "MCSB",
                         "id": "/providers/microsoft.management/managementgroups/sandbox/providers/microsoft.authorization/policyassignments/sbx-mcsb"
+                    },
+                    {
+                        "shortName": "MCSB-V2",
+                        "id": "/providers/microsoft.management/managementgroups/sandbox/providers/microsoft.authorization/policyassignments/sbx-mcsb-v2"
                     },
                     {
                         "shortName": "NIST-800-53",
