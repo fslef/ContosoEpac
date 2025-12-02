@@ -1,32 +1,75 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/enterprise-azure-policy-as-code/main/Schemas/global-settings-schema.json",
-    "pacOwnerId": "11111111-2222-3333-4444-555555555555",
+    "pacOwnerId": "cafdd129-9197-47f4-af95-077f5816eab2",
     "pacEnvironments": [
         {
-            "pacSelector": "EPAC-DEV",
+            "pacSelector": "contoso-prod",
             "cloud": "AzureCloud",
-            "tenantId": "77777777-8888-9999-1111-222222222222",
-            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/epac-contoso",
-            "desiredState": { // [optional]
-                "strategy": "ownedOnly", // default full
-                "keepDfcSecurityAssignments": true, // default false
-                "doNotDisableDeprecatedPolicies": false
-            },
-            "globalNotScopes": [],
-            "managedIdentityLocation": "eastus2"
-        },
-        {
-            "pacSelector": "Tenant",
-            "cloud": "AzureCloud",
-            "tenantId": "77777777-8888-9999-1111-222222222222",
-            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/contoso",
+            "tenantId": "be4ae739-dea2-4afc-8dc0-9a04e4091840",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateContoso",
             "desiredState": { // [optional]
                 "strategy": "full", // default full
-                "keepDfcSecurityAssignments": true, // default false
+                "keepDfcSecurityAssignments": false, // default false
                 "doNotDisableDeprecatedPolicies": false
             },
-            "globalNotScopes": [],
-            "managedIdentityLocation": "eastus2"
-        }
+            "managedIdentityLocation": "westeurope"
+            // globalNotScopes example
+            /*
+            "globalNotScopes": [
+                "/providers/Microsoft.Management/managementGroups/PAC-FSLEF-Dev"
+            ],
+            */
+        },
+        {
+            "pacSelector": "contoso-sandbox",
+            "cloud": "AzureCloud",
+            "tenantId": "be4ae739-dea2-4afc-8dc0-9a04e4091840",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/Sandbox",
+            "desiredState": { // [optional]
+                "strategy": "full", // default full
+                "keepDfcSecurityAssignments": false, // default false
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        }//,
+        // Demo environments (tenant 1 to 3)
+        /*
+        {
+            "pacSelector": "demo-tenant1",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant1-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        {
+            "pacSelector": "demo-tenant2",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant2-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        {
+            "pacSelector": "demo-tenant3",
+            "cloud": "AzureCloud",
+            "tenantId": "demo-tenant3-guid",
+            "deploymentRootScope": "/providers/Microsoft.Management/managementGroups/IntermediateRoot",
+            "desiredState": {
+                "strategy": "full",
+                "keepDfcSecurityAssignments": false,
+                "doNotDisableDeprecatedPolicies": false
+            },
+            "managedIdentityLocation": "westeurope"
+        },
+        */
     ]
 }
