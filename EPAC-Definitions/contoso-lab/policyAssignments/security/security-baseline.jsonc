@@ -14,6 +14,16 @@
             }
         },
         {
+            "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/e3ec7e09-768c-4b64-882c-fcada3772047",
+            "displayName": "Microsoft cloud security benchmark v2",
+            "assignment": {
+                "append": true,
+                "name": "mcsb-v2",
+                "displayName": "Microsoft cloud security benchmark v2",
+                "description": "Microsoft cloud security benchmark v2 Initiative."
+            }
+        },
+        {
             "policySetId": "/providers/Microsoft.Authorization/policySetDefinitions/179d1daa-458f-4e47-8086-2a68d0d6c38f",
             "displayName": "NIST SP 800-53 Rev. 5",
             "assignment": {
@@ -90,7 +100,7 @@
             "scope": {
                 "contoso-prod": [
                     "/providers/Microsoft.Management/managementGroups/IntermediateContoso"
-                ]//,
+                ] //,
                 /*
                 "demo-tenant1": [
                     "/providers/Microsoft.Management/managementGroups/DemoTenant1"
@@ -102,7 +112,7 @@
                     "/providers/Microsoft.Management/managementGroups/DemoTenant3"
                 ]
                 */
-            }//,
+            } //,
             // "notScopes": {
             //     "contoso-prod": [
             //         "/providers/Microsoft.Management/managementGroups/identity"
